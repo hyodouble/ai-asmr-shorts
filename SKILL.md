@@ -5,10 +5,20 @@ description: 상품/쿠팡 없이 AI로 ASMR 영상을 만든다. 수면용 1시
 
 # AI ASMR Shorts
 
-Claude + 영상 생성 툴(Kling / Runway / Veo / Sora 등)로 니치 하나에 고정된 AI ASMR 영상을
+Claude + **Veo 3.1 Fast (Google Flow)** 로 니치 하나에 고정된 AI ASMR 영상을
 링크나 상품 없이 컨셉 한 줄로 끝까지 만든다.
 
 주 배포물은 **수면용 1시간 롱폼**(유니크 클립을 이어붙인 마스터를 반복). 숏폼은 같은 클립 재활용해서 나중에 낸다.
+
+## 도구 / 계정 (실행 전 확인)
+
+- 생성: Google Flow — https://labs.google/fx/tools/flow
+- 계정: `hoohihi123123@gmail.com` (Google AI Pro). 브라우저 첫 프로필은 무료 티어라 Veo가 안 나온다.
+  로그인 계정을 매번 확인할 것
+- 모델: Veo 3.1 Fast (오디오 포함 생성). 화질이 부족한 컷만 Fast 아닌 Veo 3.1로 재생성
+- 조립: ffmpeg (5단계). 없으면 `winget install Gyan.FFmpeg`
+- Veo가 오디오를 같이 만들기 때문에 별도 SFX 라이브러리나 오디오 편집 단계는 두지 않는다
+
 
 ## 0단계 — 니치 고정 (최초 1회만)
 
@@ -52,6 +62,21 @@ Claude + 영상 생성 툴(Kling / Runway / Veo / Sora 등)로 니치 하나에 
 
 롱폼은 클립 20~40개가 필요하니 소재 변주(색·크기·절단 각도·낙하 높이)를 표로 뽑아 한 번에 생성한다.
 같은 프롬프트 반복 생성은 금지 — 루프 티가 난다.
+
+### Veo 프롬프트 작성 규칙
+
+프롬프트는 영어로 쓴다. 아래 6요소를 한 문단에 넣는다.
+
+1. 샷 — `Extreme close-up, macro lens, static locked-off camera`
+2. 피사체와 물성 — 무엇을 무엇으로 자르는지, 재질을 명시 (`translucent glass strawberry`)
+3. 동작 — 느리게, 한 동작만 (`slowly slicing straight down through`)
+4. **오디오 — 반드시 별도 문장으로.** `Audio: crisp crystalline crack, then a soft ringing chime. No music, no voice.`
+   Veo는 이 문장을 보고 소리를 만든다. 빼면 무음이거나 엉뚱한 소리가 붙는다
+5. 조명/속도 — `soft diffused studio light, slow motion`
+6. 금지 — `no text, no on-screen captions, no people, no speech`
+
+씬 변주는 재질·색·조명·절단 각도만 바꾸고 1·4·6번은 고정한다. 그래야 루프에서 톤이 안 튄다.
+
 
 ## 4단계 — 렌더 검수 (승인 전 필수 체크)
 
@@ -143,6 +168,18 @@ lava cutting asmr, glass cutting asmr, sleep asmr, 1 hour asmr, no talking
 
 ## 8단계 — 크레딧 가드레일
 
-롱폼 1편에 유니크 클립 20~40개가 들어가므로 숏폼보다 크레딧을 훨씬 먹는다.
-월 예산을 먼저 정하고, 초과하면 씬 재시도 횟수 → 클립 개수 → 마스터 길이 순으로 줄인다.
+Veo 3.1 Fast 기준 (Google AI Pro, 월 1,000 크레딧):
+
+| 항목 | 소모 |
+|---|---|
+| 8초 클립 1개 (Fast, 오디오 포함) | 20 크레딧 |
+| 월 생성 가능 | 약 50클립 |
+| 롱폼 1편 (유니크 40클립) | 800 크레딧 |
+| 검수 탈락 재생성 30~50% 감안 | 실질 월 1편이 한계 |
+
+크레딧이 모자라면 이 순서로 줄인다: 씬 재시도 횟수 → 클립 개수 → 마스터 길이.
 마스터를 짧게 하고 반복 횟수를 늘리는 쪽이 제일 싸지만, 3분 미만은 루프 티가 나니 하한선으로 둔다.
+
+월 2편 이상이 필요해지면 구독 상위 티어보다 Gemini API 종량제(약 $0.15/초, 8초당 $1.2)가 싸다.
+
+크레딧은 이월되지 않고 결제 주기 끝에 소멸한다. 월말에 남으면 다음 편 클립을 미리 뽑아둔다.
