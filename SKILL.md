@@ -67,6 +67,7 @@ no ringing, no bell, no chime. No music, no voice.
 Soft diffused light from the upper left, even and steady.
 No text, no on-screen captions, no faces, no speech, no jump cuts, no camera movement,
 no morphing, no vanishing objects.
+(커팅 포맷이면 여기에 칼 보호 문장을 덧붙인다 - 아래 "숏폼 30초" 절)
 ```
 
 ### 소리 원칙 (1번 규칙)
@@ -96,6 +97,7 @@ no morphing, no vanishing objects.
 ## 4단계 — 렌더 검수 (승인 전 필수)
 
 - 손가락 개수 정상인가. 손이 프레임 안에 있는가
+- 커팅 포맷이면 **칼날에 금·이빠짐이 없는가** (모델이 칼에도 크랙을 그린다)
 - 소재가 중간에 다른 물건으로 안 바뀌는가 (색·질감 유지)
 - 손이 10초 내내 움직이는가. 무음 구간 없는가
 - 마지막 2초에 물체가 사라지거나 다시 붙지 않는가
@@ -230,6 +232,10 @@ Flow에서 9:16으로 바로 뽑으면 해당 없음. 옛 롱폼 클립 등 **�
 - 니치: **고정하지 않는다.** 조사에서 1등으로 나온 포맷을 그대로 만든다(유리 커팅·용암 절단·얼음 조각·자석 슬라임 등 무엇이든). 글래스 커팅은 2026-09 시점의 1등이었을 뿐이다
 - 3막으로 연속성을 만든다: 셋업 → 절정 → 해소. 유리 커팅이면 실금 → 관통·파편 → 단면 공개. A·B·D·E 고정, C만 바꾸는 원칙은 롱폼과 같다
 - 금지어·후처리는 **그 포맷의 소리에 맞춰 켜고 끈다.** 유리·얼음처럼 쨍한 소리가 상품이면 `no ringing, no bell, no chime` 를 빼고 `detone.py` 도 돌리지 않는다. 말랑한 소재(슬라임·반죽·왁스)면 롱폼 규칙대로 금지어를 넣고 `detone.py` 를 돌린다
+- **칼은 절대 금이 가면 안 된다.** 모델이 칼날에도 실금을 그려 넣는다(2026-09-17 유리 디저트·레진 큐브에서 확인).
+  프롬프트 E 블록 끝에 이 문장을 **항상** 넣는다:
+  `The steel blade itself stays perfectly solid and undamaged for the entire clip - it never cracks, chips, bends or shatters, and no fractures appear on the blade; only the object being cut breaks.`
+  검수 그리드(4단계)에서도 **칼날에 금이 갔는지 따로 본다.** 칼이 깨지면 그 클립은 탈락이다
 - Flow 설정: 동영상 기본값 **9:16 / x1 / Omni 1.1 Flash**. 3클립 = 45크레딧 = 본계정 하루 한도(50) 안
 
 ### 트렌드 조사
