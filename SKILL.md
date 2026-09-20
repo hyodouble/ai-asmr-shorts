@@ -408,6 +408,7 @@ Best with headphones.
 | 2026-09-19 | 마법 슬라임 소파 3종(딸기 크림 · 바다 오로라 · 미드나잇 갤럭시) | 선택형 누르기(슬라임) |
 | 2026-09-19 | 푸드 슬라이드 3종(딸기 젤리 · 망고 크림 · 블루베리 푸딩) | 슬라이드 ASMR |
 | 2026-09-20 | 푸드 슬라이드 2탄(바나나 초콜릿 퐁당 · 키위 말차 크림 · 복숭아 요거트) | 슬라이드 ASMR #2 |
+| 2026-09-20 | 드림 베드 3종(선셋 클라우드 · 심해 수족관 돔 워터베드 · 우중 트리하우스) | 선택형 ASMR ("Which Bed Would You Sleep In Tonight?") |
 
 글래스 커팅 다음 후보(단면 페이오프 순): 무화과 · 스타프루트 · 패션프루트 · 오렌지 · 수박.
 이 후보 목록은 **트렌드 조사에서 글래스 커팅이 계속 1등일 때만** 쓴다. 1등 포맷이 바뀌면 그쪽 소재로 새로 판다.
@@ -672,5 +673,29 @@ acompressor=threshold=-35dB:ratio=10:attack=5:release=250:makeup=14
   - 워터마크 제거 (`delogo=x=574:y=1138:w=56:h=56`) + Lanczos 1080x1920 업스케일 24fps
   - 브라우저 업로드 경량본 `out/upload.mp4` (8.1MB, 10MB 한도 충족)
 - 업로드 및 첫 댓글: 제목/설명/라벨(AI 합성콘텐츠 체크)/공개 상태(Public)로 게시 완료 및 공식 첫 댓글(`I'm definitely taking the Matcha Kiwi slide! 🥝 Which one are you riding? 👇`) 작성 완료.
+
+### 2026-09-20 실행 기록 14 — 드림 베드 3종 ("Which Bed Would You Sleep In Tonight?") (hoohihi123123)
+
+- 결과물: https://youtube.com/shorts/osxw15WcEdo
+- 포맷: 글로벌 숏폼 1위 선택형 포맷 ("Which Bed Would You Sleep In Tonight? 🛌✨")
+  - Scene 1: 노을빛 파스텔 구름 침대 & 황금빛 별먼지 (Pastel Sunset Cloud Bed)
+  - Scene 2: 심해 해저 수족관 돔 워터베드 & 발광 해파리 (Bioluminescent Aquarium Dome Bed)
+  - Scene 3: 비 내리는 숲속 거대 나무 오두막 침대 & 청키 니트 울 이불 (Rainy Forest Treehouse Bed)
+- 계정 및 모델: 구글 플로우 계정 `hoohihi123123`(authuser=1, 45 크레딧 소모), **Omni 1.1 Flash**, 9:16, 10초 x1, 720p
+- Flow 생성 자동화: Chrome AppleScript DOM 제어로 Omni 1.1 Flash 모델 세팅, 프롬프트 입력 및 렌더/일괄 다운로드 수행
+- 원본/필터링 레벨: s1 -16.6 / s2 -13.3 / s3 -20.6 LUFS
+- 게인 캘리브레이션: `GAIN1=-3.4 GAIN2=-6.7 GAIN3=0`
+  - 개별 클립 최종: s1 -20.0 / s2 -20.0 / s3 -20.6 LUFS (**최대 편차 0.6 dB**로 < 1.5 dB 한도 완벽 충족)
+- 최종 마스터링(`out/short_30s.mp4`):
+  - **-20.3 LUFS** (목표 -20.0 ± 1.0 dB 충족)
+  - **True Peak -4.2 dBTP** (0.0 dBTP 한도 충족, 클리핑 전혀 없음)
+  - 워터마크 제거 (`delogo=x=574:y=1138:w=56:h=56`) + Lanczos 1080x1920 업스케일 24fps
+  - 브라우저 업로드 경량본 `out/upload.mp4` (6.6MB, 10MB 한도 충족)
+- 유튜브 게시 및 메타데이터:
+  - 알고리즘 씨앗 테스트 격리 방지를 위해 **100% 영문 메타데이터** 규칙 준수 (제목/설명/댓글 일체 한국어 배제)
+  - 제목: `Which Bed Would You Sleep In Tonight? 🛌✨ Cloud vs Ocean vs Rain | AI ASMR`
+  - 아동용 아님(Not for kids) / AI 변형·합성 콘텐츠(Yes) 체크
+  - 공식 첫 댓글 작성 완료: `I'm definitely sleeping in the rainy treehouse bed tonight! 🌧️ Which one are you choosing? 👇`
+
 
 
