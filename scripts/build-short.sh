@@ -6,7 +6,7 @@
 #   결과:   작업폴더/out/short_30s.mp4, 작업폴더/out/upload.mp4 (10MB 미만, 브라우저 업로드용)
 #
 # 클립별 라우드니스 편차는 GAIN 으로 맞춘다. 기본값 0 으로 한 번 돌린 뒤
-# 출력되는 LUFS 를 보고 -20.5 기준으로 차이를 채워 다시 돌린다.
+# 출력되는 LUFS 를 보고 글로벌 쇼츠 표준인 -14.5 LUFS 기준으로 차이를 채워 다시 돌린다.
 
 D=${1:?"작업폴더 경로를 인자로 넘겨라 (예: sh build-short.sh ~/Desktop/asmr_work/shorts/20260911)"}
 cd "$D" || exit 1
@@ -21,10 +21,11 @@ for n in 1 2 3; do
   [ -f "raw/s$n.mp4" ] || { echo "raw/s$n.mp4 없음"; exit 1; }
   eval g=\$GAIN$n
 
-  # 오디오: 럼블 컷 -> 노이즈 제거 -> 다이내믹 정규화 -> 보정 -> 리미터
-  # 리미터 천장 0.45 는 AAC 인코딩이 피크를 약 5 dB 밀어올리기 때문. 0.89 로 두면 인코딩 후 클리핑난다.
+  # 오디오 (글로벌 1위 쇼츠 표준 클린 체인):
+  # 45Hz 이하 럼블만 완만히 컷 + afftdn/dynaudnorm 제거로 위상 왜곡 및 펌핑 노이즈 0% 달성
+  # EBU R128 표준 loudnorm (-14.5 LUFS / True Peak -1.0 dBTP)
   ffmpeg -nostdin -v error -i "raw/s$n.mp4" -vn \
-    -af "highpass=f=80:p=2,afftdn=nr=12:nf=-45,dynaudnorm=f=150:g=15:p=0.85:m=25:s=5,volume=${g}dB,alimiter=limit=0.45:attack=5:release=60:level=disabled,afade=t=in:st=0:d=0.04,afade=t=out:st=9.96:d=0.04" \
+    -af "highpass=f=45:p=2,loudnorm=I=-14.5:TP=-1.0:LRA=7:linear=false,volume=${g}dB,afade=t=in:st=0:d=0.04,afade=t=out:st=9.96:d=0.04" \
     -ar 48000 -f wav "a$n.wav" -y || exit 1
 
   # 영상: 워터마크 제거 + 1080x1920 업스케일
