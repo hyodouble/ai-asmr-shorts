@@ -283,7 +283,16 @@ Flow에서 9:16으로 바로 뽑으면 해당 없음. 옛 롱폼 클립 등 **�
   빌드 스크립트가 `out/upload.mp4`(CRF 23, 약 9.5MB)를 같이 만들어 둔다. 원본이 720p 업스케일이라 눈에 띄는 손해는 없다.
   원본 화질 그대로 올리려면 사람이 Studio에서 직접 파일을 고르면 된다
 
-파이프라인 스크립트: `scripts/build-short.sh` — `raw/s1.mp4 s2.mp4 s3.mp4` 를 넣고 `sh scripts/build-short.sh <작업폴더>`.
+파이프라인 스크립트(2026-09-21 개편, 순서대로 돌린다). 작업 폴더에 `raw/s1..s3.mp4` 와 `foley/` 를 넣고:
+
+```bash
+sh scripts/mix-foley.sh <작업폴더>                       # foley 레이어 (BED, FOLEY_DB 로 조절)
+GAIN1=0 GAIN2=0 GAIN3=0 sh scripts/build-short2.sh <작업폴더>   # -14.5 LUFS, 편차 1 dB 이내로 GAIN 실측 보정
+python3 scripts/make_overlays.py <작업폴더> "<후크>" "1. ..." "2. ..." "3. ..."
+LIMIT=0.7 GFIN=0 sh scripts/finish-short.sh <작업폴더>   # 오버레이 + 1.7배속, 최종 -14.0~-15.0 LUFS로 GFIN 보정
+```
+
+구 `scripts/build-short.sh`(1패스 loudnorm)는 조용한 원본에서 목표 라우드니스에 못 닿아 쓰지 않는다.
 클립 간 라우드니스가 1.5 dB 넘게 벌어지면 `GAIN1/GAIN2/GAIN3` 환경변수(dB)로 맞춰 다시 돌린다.
 프롬프트 템플릿: `templates/short-glass-cutting.txt` (2026-09-11 유리 키위 3막 전문)
 

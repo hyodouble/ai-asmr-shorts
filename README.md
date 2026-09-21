@@ -16,7 +16,11 @@ AI ASMR 영상을 기획→프롬프트→렌더 검수→후처리→업로드�
 | 파일 | 용도 |
 |---|---|
 | `SKILL.md` | 워크플로우 전문. 프롬프트 블록, 검수 기준, 후처리 체인, 배포 규칙, 발행 이력 |
-| `scripts/build-short.sh` | 숏폼 파이프라인. `raw/s1..s3.mp4` → `out/short_30s.mp4` + 업로드용 사본 |
+| `scripts/mix-foley.sh` | 1단계. AI 오디오 위에 CC0 foley를 -16 dB로 레이어링 (`raw/` → `rawfx/`) |
+| `scripts/build-short2.sh` | 2단계. 프리게인 + 2패스 loudnorm으로 -14.5 LUFS / TP -1.0 (`rawfx/` → `out2/`, 30초 마스터까지) |
+| `scripts/make_overlays.py` | 3단계. 후크·씬 넘버링 오버레이 PNG 3장 (ffmpeg에 drawtext가 없는 환경용) |
+| `scripts/finish-short.sh` | 4단계. 씬별 오버레이 합성 + 1.7배속 17.6초 → `out/short_final.mp4` |
+| `scripts/build-short.sh` | 구 1패스 파이프라인. 조용한 원본에서 -14.5 LUFS에 못 닿아 지금은 안 쓴다 |
 | `templates/short-glass-cutting.txt` | 글래스 커팅 3막 프롬프트 전문(유리 키위 기준) |
 | `tonecheck.py` | FFT 톤 검사. 모델이 몰래 넣는 벨/차임 탐지 |
 | `detone.py` | 톤 성분 제거(롱폼 전용). 적용 전후로 tonecheck 재확인 필수 |
