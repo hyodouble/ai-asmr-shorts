@@ -15,6 +15,8 @@ mkdir -p out frames
 QUESTION=${QUESTION:-"Which one would you choose?"}
 CTA=${CTA:-"COMMENT YOUR PICK"}
 FONT=${FONT:-"C\\:/Windows/Fonts/arialbd.ttf"}
+# 60초는 CRF 23이면 15MB라 브라우저 업로드 10MB 한도를 넘는다(실행 기록 19). 10MB를 넘으면 UPLOAD_CRF 를 올려 다시 돌린다
+UPLOAD_CRF=${UPLOAD_CRF:-28}
 
 DELOGO="delogo=x=574:y=1138:w=56:h=56"
 
@@ -50,7 +52,7 @@ for n in $(seq 1 "$N"); do
 done
 
 ffmpeg -nostdin -v error -f concat -safe 0 -i out/list.txt -c copy out/short.mp4 -y || exit 1
-ffmpeg -nostdin -v error -i out/short.mp4 -c:v libx264 -crf 23 -preset slow -pix_fmt yuv420p \
+ffmpeg -nostdin -v error -i out/short.mp4 -c:v libx264 -crf "$UPLOAD_CRF" -preset slow -pix_fmt yuv420p \
   -c:a copy -movflags +faststart out/upload.mp4 -y || exit 1
 ffmpeg -nostdin -v error -i out/short.mp4 -vf "fps=1/5,scale=200:-1,tile=12x1" -frames:v 1 frames/final_strip.png -y
 
