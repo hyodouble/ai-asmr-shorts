@@ -468,6 +468,19 @@ Best with headphones.
    문구·계정 주의는 "7단계 — 업로드" 절 그대로. 고정(📌)은 **2026-10-05에 재확인 후** 규칙에 넣는다 — 그 전까지는 달기만 한다.
    **댓글이 없어서 안 뜬 게 아니라 안 떠서 댓글이 없는 것이다.** 순서를 뒤집어 댓글을 조회수 대책으로 쓰지 않는다
 8. **성적 판정 기준을 조회수에서 유지율로 바꾼다.** 발행 24시간 뒤 Studio에서 `계속 시청함`을 적어 둔다. 60% 미만이면 다음 편에서 첫 3초를 갈아엎는다. 60% 이상이 3편 연속이면 피드 배급이 돌아온다
+9. **사람을 넣으면 사람이 사라지는 컷은 절대 발행하지 않는다 (2026-09-23 사용자 지시, 예외 없음).**
+   몸이 투명해지거나, 흐려지거나, 팔·손만 남거나, 머리·몸통이 잘리거나, 프레임 밖으로 빠지는 컷은 전부 "사라짐"이다.
+   불가능한 침대 #2의 꿀 클립이 3초부터 몸이 투명해지며 팔만 남았다 — 이 현상을 다시 내보내지 않는다.
+   - **프롬프트 (사람이 나오는 클립 전부 필수):**
+     - 자세: 소재 더미 "안"이 아니라 가장자리에 앉히고 몸 전체를 소재 밖에 둔다(`sitting on the wooden edge of the bed frame, feet flat on the floor, the whole body clear of the ...`)
+     - 복장 명시(`fully dressed in loose long-sleeved pyjamas and long trousers`)
+     - 동작은 손만 짧게 반복한다. 몸을 들어 올리기·굴러가기·일어나 떠나기·뛰어들기·소재 속으로 파묻히기는 쓰지 않는다
+     - 아래 문장을 그대로 넣는다:
+       `The same person stays fully solid, opaque and completely visible from head to feet in every frame from the first to the last; the body never fades, never turns transparent, never dissolves, never shrinks to arms or hands only and never leaves the frame.`
+   - **검수 (생성 직후, 편집 전):** 사람이 나오는 클립은 전부 1초 간격 10프레임 그리드(`raw/*_grid.png`)를 뽑아 **모든 프레임**에서 머리부터 발까지 불투명한 전신이 보이는지 확인한다.
+     한 프레임이라도 걸리면 그 클립은 탈락이다. 사라지기 전 구간만 잘라 쓰는 것도 금지한다
+   - **탈락 클립 처리:** 같은 프롬프트로 재생성하거나 그 아이템을 뺀다. 발행 전 최종본(`out/short.mp4`)도 클립마다 프레임을 다시 뽑아 한 번 더 확인한다
+
 
 ### 크레딧 현실 (v2 적용 시)
 
@@ -935,7 +948,16 @@ acompressor=threshold=-35dB:ratio=10:attack=5:release=250:makeup=14
 - 업로드 다이얼로그가 이번에도 중간에 잘려 `find` 로 ref 를 받아 클릭했다. 해시태그 자동완성은 다이얼로그 빈 공간 클릭으로 닫는다
 
 
-### 2026-09-22 실행 기록 20 — 불가능한 침대 #2 (진행 중, 6클립 확보)
+### 2026-09-22 실행 기록 20 — 불가능한 침대 #2 (2026-09-23 발행, 5클립)
+
+- 결과물: https://youtube.com/shorts/UFq0pqBoLDA (제목 `Which Impossible Bed Would You Sleep In? 🛏️ #2 | AI ASMR`, 공개)
+- **꿀 클립은 뺐다.** 3초쯤부터 몸이 투명해지고 팔만 남아 재생성 대신 5클립 50초로 발행
+- foley(#6): archive.org Designer's Choice에는 뽁뽁이·낙엽·모래가 없다. **BigSoundBank(CC0, 계정 불필요)** 에서 받았다.
+  `https://bigsoundbank.com/UPLOAD/mp3/<ID>.mp3` — 뽁뽁이 0462(7초라 루프), 파도+자갈 1445, 쌀 붓기 0201, 낙엽 밟기 2889, 과자봉지 1433. 전부 -16 dB
+- **`scripts/build-short-v2.sh` 는 아직 구 체인(afftdn, -20.5 LUFS)이다.** 규칙 9와 충돌해 작업 폴더 `build.sh` 로 고쳐 썼다:
+  `highpass=45 → acompressor 2.5:1 → 실측 후 -14.5 LUFS 자동 게인 → alimiter`, 번호 옆 아이템 이름(`LABELS="A|B|..."`), 질문 글자 크기 `QSIZE`(40자 질문은 58이면 화면 밖으로 넘친다 → 42), 업로드 CRF `UPCRF`
+- `LIMIT=0.7 GAIN1=6 GAIN2=0.8` → 클립 -15.1 ~ -14.6 LUFS(편차 0.5 dB), 최종 -14.8 LUFS / TP -1.4 dBTP / LRA 3.2 / 50.02초, 업로드본 CRF 28 7.0MB
+- **시청 페이지(youtube.com/watch)에서 댓글을 달면 채널 없는 계정으로 잡혀 "채널이 생성됩니다" 가 뜬다.** 첫 댓글은 `studio.youtube.com/video/<ID>/comments` 에서 달아야 SliceverseAI로 달린다
 
 - 소재 6종: 뽁뽁이 · 거대 조개껍데기(진주+바닷물) · 키네틱 샌드 · 낙엽 · 팝콘 · 벌집 꿀.
   소리 정체를 6개 다 다르게 잡았다(팝 / 젖은 클릭 / 알갱이 / 마른 바스락 / 마른 크런치 / 끈적 스퀄치)
