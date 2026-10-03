@@ -19,6 +19,7 @@ AI ASMR 영상을 기획→프롬프트→렌더 검수→후처리→업로드�
 | 파일 | 용도 |
 |---|---|
 | `SKILL.md` | 워크플로우 전문. 프롬프트 블록, 검수 기준, 후처리 체인, 배포 규칙, 발행 이력 |
+| `scripts/build-story.sh` | **2026-10-04부터 유일한 빌드 스크립트.** 캐릭터 스토리 쇼츠 조립. 원본 스테레오 + 클립별 선형 게인(-16 LUFS), 6 dB 넘게 키워야 하는 클립만 노이즈 제거, `SPEED`·`CUTS` 옵션 |
 | `scripts/mix-foley.sh` | 1단계. AI 오디오 위에 CC0 foley를 -16 dB로 레이어링 (`raw/` → `rawfx/`) |
 | `scripts/build-short2.sh` | 2단계. 프리게인 + 2패스 loudnorm으로 -14.5 LUFS / TP -1.0 (`rawfx/` → `out2/`, 30초 마스터까지) |
 | `scripts/make_overlays.py` | 3단계. 후크·씬 넘버링 오버레이 PNG 3장 (ffmpeg에 drawtext가 없는 환경용) |
