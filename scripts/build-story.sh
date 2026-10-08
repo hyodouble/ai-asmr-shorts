@@ -30,7 +30,7 @@ for n in $(seq 1 "$N"); do
   src="raw/s$n.mp4"
   cut=$(echo "${CUTS:-}" | awk -v n="$n" '{print $n}')
   a=${cut%-*}; b=${cut#*-}; [ -n "$cut" ] || { a=0; b=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$src"); }
-  d=$(echo "scale=4; ($b - $a) / $SPEED" | bc)
+  d=$(awk -v a="$a" -v b="$b" -v s="$SPEED" "BEGIN{printf \"%.4f\", (b-a)/s}")  # awk, not bc: Git Bash on Windows has no bc
   set -- $(lufs "$src")
   af="atrim=$a:$b,asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo"
   if awk -v i="$1" -v t="$TARGET" -v m="$MAXCLEAN" 'BEGIN{exit !(t - i > m)}'; then af="$af,$DENOISE"; tag=denoised; else tag=clean; fi
@@ -41,7 +41,7 @@ for n in $(seq 1 "$N"); do
   set -- $(lufs "out/a${n}_pre.wav")
   g=$(awk -v i="$1" -v p="$2" -v t="$TARGET" -v r="$PEAKROOM" 'BEGIN{g=t-i; if(g>-1-p+r)g=-1-p+r; printf "%.2f", g}')
   # 20 ms fades only remove cut clicks.
-  ffmpeg -nostdin -v error -i "out/a${n}_pre.wav" -af "volume=${g}dB,afade=t=in:d=0.02,afade=t=out:st=$(echo "$d - 0.02" | bc):d=0.02" -c:a pcm_s24le "out/a$n.wav" -y
+  ffmpeg -nostdin -v error -i "out/a${n}_pre.wav" -af "volume=${g}dB,afade=t=in:d=0.02,afade=t=out:st=$(awk -v d="$d" "BEGIN{printf \"%.4f\", d-0.02}"):d=0.02" -c:a pcm_s24le "out/a$n.wav" -y
   rm "out/a${n}_pre.wav"
   echo "s$n $tag $1 LUFS peak $2 -> gain $g dB, cut $a-$b"
   inputs="$inputs -i $src -i out/a$n.wav"
