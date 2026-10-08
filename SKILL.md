@@ -45,6 +45,8 @@ description: 상품/쿠팡 없이 AI로 ASMR 영상을 만든다. 수면용 1시
   - 리미터 천장은 0.7(-3 dB)이다. 0.89에서는 AAC 인코딩 후 피크가 +1.9 dBFS로 클리핑됐다.
   - 결과: 최종 -18.2 LUFS, 피크 -1.1 dBFS, 구간별 -16.6~-20.8. 몰래 다가가는 장면은 원래 조용하다.
 
+**BGM은 Flow Music으로 직접 만든다 (2026-10-09, 사용자 규칙):** Pixabay 곡은 페이지에 Content ID 표시가 없어도 YouTube 업로드 검사에서 소유권 주장이 걸렸다(Baking Time, Happy Ukulele, Funny Bouncy Cartoon Mischief → 제3자 "Funny Bgm"). 다음 회차부터 BGM은 Google Flow Music(flowmusic.app, supergiantapple)에서 "Instrumental only, no vocals" 프롬프트로 회차 분위기에 맞게 생성한다. 만든 곡은 `~/Desktop/asmr_work/bgm/made_music/`에 저장하고 `SOURCES.tsv`와 GitHub `made_music/`에 남긴다. Flow Music 다운로드 버튼은 파일을 저장하지 않으니, 재생 후 `performance` 리소스 목록의 `storage.googleapis.com/producer-app-public/clips/<id>.m4a`를 curl로 받는다. 게시 전 YouTube 검토 단계에서 소유권 주장이 없는지 꼭 확인한다.
+
 **캐릭터 스토리 포맷:**
 - 반복되는 캐릭터 하나가 나오는 연재이다. 15~30초, 3~4컷이며 첫 1초에 사건이 일어난다.
 - 소리는 Veo가 잘 만드는 것만 요청한다: 캐릭터 발성(야옹, 웃음, 짧은 감탄), 행동 효과음, 공간 앰비언스.

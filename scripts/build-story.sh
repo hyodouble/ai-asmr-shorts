@@ -8,6 +8,8 @@
 #   workdir/raw/s1.mp4 .. sN.mp4  Flow 720x1280 clips, played in order
 #   CUTS="0.5-9 1-7.5 ..."         optional in-out seconds per clip (default: whole clip)
 #   workdir/out/overlayN.png        optional 1080x1920 transparent caption PNG per clip
+#   BGM=music.mp3 BGMLUFS=-30       optional background track, looped, normalized under the SFX, faded in/out
+#   AF3="bandreject=f=395:width_type=h:w=40"  optional extra audio filter for clip N (static notch for a Flow drone)
 #   SPEED=1.2                       optional playback speed (atempo keeps pitch); default 1
 #   DN=0.001                        NLM denoise strength for boosted clips (higher = cleaner but duller)
 # Output: workdir/out/story.mp4 at about -17 LUFS. Limiter ceiling 0.7 (-3 dB) because AAC overshoots limited peaks by ~2-3 dB.
@@ -15,7 +17,7 @@ set -eu
 D=${1:?workdir}
 cd "$D"
 mkdir -p out frames
-SPEED=${SPEED:-1}; TARGET=-16; MAXCLEAN=6; PEAKROOM=${PEAKROOM:-12}; DN=${DN:-0.001}
+SPEED=${SPEED:-1}; TARGET=-16; MAXCLEAN=6; PEAKROOM=${PEAKROOM:-12}; MAXGAIN=${MAXGAIN:-30}; DN=${DN:-0.001}
 DELOGO="delogo=x=574:y=1138:w=56:h=56"
 # Any clip that needs more than MAXCLEAN dB of gain gets denoised first: Flow's hiss and the rumble band
 # under ~300 Hz rise with the gain (Mochi #1: -26..-30 LUFS clips boosted 10-14 dB showed a hiss bed).
@@ -34,12 +36,14 @@ for n in $(seq 1 "$N"); do
   set -- $(lufs "$src")
   af="atrim=$a:$b,asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo"
   if awk -v i="$1" -v t="$TARGET" -v m="$MAXCLEAN" 'BEGIN{exit !(t - i > m)}'; then af="$af,$DENOISE"; tag=denoised; else tag=clean; fi
+  eval extra=\${AF$n:-}; [ -n "$extra" ] && af="$af,$extra"
   af="$af,atempo=$SPEED"  # after anlmdn: atempo before it segfaults ffmpeg 9.0.1
   ffmpeg -nostdin -v error -i "$src" -vn -af "$af" -c:a pcm_s24le "out/a${n}_pre.wav" -y
   # Per-clip linear gain to TARGET; peaks above -1 dBTP are left to the final limiter, at most PEAKROOM dB.
   # Flow peaks are isolated spikes (1-2% of 10 ms windows, Mochi #1), so 12 dB of limiting on them is inaudible.
   set -- $(lufs "out/a${n}_pre.wav")
-  g=$(awk -v i="$1" -v p="$2" -v t="$TARGET" -v r="$PEAKROOM" 'BEGIN{g=t-i; if(g>-1-p+r)g=-1-p+r; printf "%.2f", g}')
+  g=$(awk -v i="$1" -v p="$2" -v t="$TARGET" -v r="$PEAKROOM" -v m="$MAXGAIN" 'BEGIN{g=t-i; if(g>-1-p+r)g=-1-p+r; if(g>m)g=m; printf "%.2f", g}')
+  # MAXGAIN: near-silent Flow clips (-55..-63 LUFS, clay house #1) pushed +40 dB still show a hiss bed after denoise; leave them quiet.
   # 20 ms fades only remove cut clicks.
   ffmpeg -nostdin -v error -i "out/a${n}_pre.wav" -af "volume=${g}dB,afade=t=in:d=0.02,afade=t=out:st=$(awk -v d="$d" "BEGIN{printf \"%.4f\", d-0.02}"):d=0.02" -c:a pcm_s24le "out/a$n.wav" -y
   rm "out/a${n}_pre.wav"
@@ -56,7 +60,15 @@ for n in $(seq 1 "$N"); do
   fc="$fc[$ai:a]anull[a$n];"
   cat_in="$cat_in[v$n][a$n]"
 done
+if [ -n "${BGM:-}" ]; then
+  # One track for the whole video; Flow is prompted with "No music" so clips never bring their own.
+  total=0; for n in $(seq 1 "$N"); do total=$(awk -v t="$total" -v x="$(ffprobe -v error -show_entries format=duration -of csv=p=0 out/a$n.wav)" "BEGIN{printf \"%.4f\", t+x}"); done
+  ffmpeg -nostdin -v error -stream_loop -1 -i "$BGM" -t "$total" -af "aresample=48000,aformat=channel_layouts=stereo,loudnorm=I=${BGMLUFS:--30}:TP=-6:LRA=7,afade=t=in:d=1,afade=t=out:st=$(awk -v t="$total" "BEGIN{printf \"%.4f\", t-2}"):d=2" -c:a pcm_s24le out/bgm.wav -y
+  inputs="$inputs -i out/bgm.wav"
+  fc="$fc${cat_in}concat=n=$N:v=1:a=1[outv][sfx];[sfx][$k:a]amix=inputs=2:normalize=0:duration=first[outa0];[outa0]alimiter=limit=0.7:attack=1:release=50:level=disabled[outa]"
+else
 fc="$fc${cat_in}concat=n=$N:v=1:a=1[outv][outa0];[outa0]alimiter=limit=0.7:attack=1:release=50:level=disabled[outa]"
+fi
 
 # shellcheck disable=SC2086
 ffmpeg -nostdin -v error $inputs -filter_complex "$fc" -map '[outv]' -map '[outa]' \
