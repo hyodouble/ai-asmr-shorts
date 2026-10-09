@@ -32,7 +32,7 @@ for n in $(seq 1 "$N"); do
   src="raw/s$n.mp4"
   cut=$(echo "${CUTS:-}" | awk -v n="$n" '{print $n}')
   a=${cut%-*}; b=${cut#*-}; [ -n "$cut" ] || { a=0; b=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$src"); }
-  d=$(awk -v a="$a" -v b="$b" -v s="$SPEED" "BEGIN{printf \"%.4f\", (b-a)/s}")  # awk, not bc: Git Bash on Windows has no bc
+  d=$(awk -v a="$a" -v b="$b" -v s="$SPEED" 'BEGIN{printf "%.4f", (b-a)/s}')  # awk, not bc: Git Bash on Windows has no bc
   set -- $(lufs "$src")
   af="atrim=$a:$b,asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo"
   if awk -v i="$1" -v t="$TARGET" -v m="$MAXCLEAN" 'BEGIN{exit !(t - i > m)}'; then af="$af,$DENOISE"; tag=denoised; else tag=clean; fi
@@ -45,7 +45,7 @@ for n in $(seq 1 "$N"); do
   g=$(awk -v i="$1" -v p="$2" -v t="$TARGET" -v r="$PEAKROOM" -v m="$MAXGAIN" 'BEGIN{g=t-i; if(g>-1-p+r)g=-1-p+r; if(g>m)g=m; printf "%.2f", g}')
   # MAXGAIN: near-silent Flow clips (-55..-63 LUFS, clay house #1) pushed +40 dB still show a hiss bed after denoise; leave them quiet.
   # 20 ms fades only remove cut clicks.
-  ffmpeg -nostdin -v error -i "out/a${n}_pre.wav" -af "volume=${g}dB,afade=t=in:d=0.02,afade=t=out:st=$(awk -v d="$d" "BEGIN{printf \"%.4f\", d-0.02}"):d=0.02" -c:a pcm_s24le "out/a$n.wav" -y
+  ffmpeg -nostdin -v error -i "out/a${n}_pre.wav" -af "volume=${g}dB,afade=t=in:d=0.02,afade=t=out:st=$(awk -v d="$d" 'BEGIN{printf "%.4f", d-0.02}'):d=0.02" -c:a pcm_s24le "out/a$n.wav" -y
   rm "out/a${n}_pre.wav"
   echo "s$n $tag $1 LUFS peak $2 -> gain $g dB, cut $a-$b"
   inputs="$inputs -i $src -i out/a$n.wav"
@@ -62,8 +62,8 @@ for n in $(seq 1 "$N"); do
 done
 if [ -n "${BGM:-}" ]; then
   # One track for the whole video; Flow is prompted with "No music" so clips never bring their own.
-  total=0; for n in $(seq 1 "$N"); do total=$(awk -v t="$total" -v x="$(ffprobe -v error -show_entries format=duration -of csv=p=0 out/a$n.wav)" "BEGIN{printf \"%.4f\", t+x}"); done
-  ffmpeg -nostdin -v error -stream_loop -1 -i "$BGM" -t "$total" -af "aresample=48000,aformat=channel_layouts=stereo,loudnorm=I=${BGMLUFS:--30}:TP=-6:LRA=7,afade=t=in:d=1,afade=t=out:st=$(awk -v t="$total" "BEGIN{printf \"%.4f\", t-2}"):d=2" -c:a pcm_s24le out/bgm.wav -y
+  total=0; for n in $(seq 1 "$N"); do total=$(awk -v t="$total" -v x="$(ffprobe -v error -show_entries format=duration -of csv=p=0 out/a$n.wav)" 'BEGIN{printf "%.4f", t+x}'); done
+  ffmpeg -nostdin -v error -stream_loop -1 -i "$BGM" -t "$total" -af "aresample=48000,aformat=channel_layouts=stereo,loudnorm=I=${BGMLUFS:--30}:TP=-6:LRA=7,afade=t=in:d=1,afade=t=out:st=$(awk -v t="$total" 'BEGIN{printf "%.4f", t-2}'):d=2" -c:a pcm_s24le out/bgm.wav -y
   inputs="$inputs -i out/bgm.wav"
   fc="$fc${cat_in}concat=n=$N:v=1:a=1[outv][sfx];[sfx][$k:a]amix=inputs=2:normalize=0:duration=first[outa0];[outa0]alimiter=limit=0.7:attack=1:release=50:level=disabled[outa]"
 else
