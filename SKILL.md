@@ -649,6 +649,7 @@ Best with headphones.
 | 2026-10-08 | Tofu #2 "A Storm Knocked Down Her Home... So Tofu Built a New One" (https://youtube.com/shorts/DgpEsjF5WQA, 인스타 whatttsts, 틱톡 Tiny Cozy Stories) | 캐릭터 스토리(파랑새 둥지, 장면별 자막 6개, 50초) |
 | 2026-10-09 | Tofu #3 "A Baby Seal Was Lost and Crying... So Tofu Helped Her Find Mom" (https://youtube.com/shorts/abNKS9QqpO0, 인스타 whatttsts, 틱톡 Tiny Cozy Stories) | 캐릭터 스토리(아기 물개, 50초, Flow Music BGM) |
 | 2026-10-13 | Tofu #5 "The Ice Cracked and She Drifted Away... So Tofu Jumped In 🦭🧊 #5" (https://youtube.com/shorts/7wlQ3PT2QaU, 인스타 whatttsts, 틱톡 Tiny Cozy Stories) | 캐릭터 스토리(12클립 이틀 제작, 1.2배속 100초, 장면별 자막 12개, Flow Music BGM "Winter's Heart"). #4는 미업로드라 번호가 #3에서 #5로 건너뜀. 파일은 사용자가 직접 끌어다 놓음(17.7 MB) |
+| 2026-10-14 | Tofu #6 "Her Sled Broke... So Tofu Became Her Sled 🛷💛 #6" (https://youtube.com/shorts/GN2ThLYjfgI, 인스타 whatttsts, 틱톡 Tiny Cozy Stories) | 캐릭터 스토리(아기 여우 썰매, 1.2배속 50초, 장면별 자막 6개, Flow Music BGM "Sledding Friends") |
 
 글래스 커팅 다음 후보(단면 페이오프 순): 무화과 · 스타프루트 · 패션프루트 · 오렌지 · 수박.
 이 후보 목록은 **트렌드 조사에서 글래스 커팅이 계속 1등일 때만** 쓴다. 1등 포맷이 바뀌면 그쪽 소재로 새로 판다.
