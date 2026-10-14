@@ -1473,3 +1473,13 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
 - s4가 둥지를 처음부터 가지 위에 둔 채로 나왔다. 재생성하지 않고 편집 순서를 s1 s2 s3 s5 s4 s6으로 바꿔 "올려놓은 뒤 기뻐서 엉덩방아"로 썼다
 - 원본 -15.0~-31.7 LUFS. `MAXCLEAN=99`(노이즈 제거 없음)로 빌드해 -17.0 LUFS, 피크 -2.0 dBFS. 음악은 #1과 같은 Pixabay "Winter Miracle"을 -9.5 dB 아래로 깔아 최종 -18.2 LUFS
 - Windows Git Bash에는 `bc`가 없다. `scripts/build-story.sh`의 길이 계산을 `awk`로 바꿨다. Pillow는 사용자 site-packages에 있어서 `python -I`로 돌리면 못 찾는다
+
+### 2026-10-14 실행 기록 — Tofu #6 발행, Mochi #12 제작·발행, Tofu #7 제작
+- Tofu #6 "Her Sled Broke... So Tofu Became Her Sled 🛷💛 #6" 발행: YouTube SliceverseAI https://youtube.com/shorts/GN2ThLYjfgI (첫 댓글 "Would you ride the Tofu sled?"), 틱톡 Tiny Cozy Stories(도구 업로드 바로 됨), 인스타 whatttsts(사용자가 파일을 끌어다 놓음)
+- Mochi #12 "Mochi vs the Cucumber 🥒 | Cozy AI Story #12" (`templates/story-mochi-12.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. 6클립 모두 첫 시도 통과. BGM은 Flow Music "Curious Kitten & The Cucumber". 50초, -19.4 LUFS
+  - 발행: YouTube Cozy AI Story https://youtube.com/shorts/FcFG5GNh_5E (저작권 검사 통과), 틱톡 @aistorycozy(검토 중), 인스타 aistorycozy 릴스. 세 곳 모두 도구 업로드가 됐다
+- Tofu #7 "Her Kite Got Stuck in the Tree... So Tofu Helped Her Get It Back 🪁💛 #7" (`templates/story-tofu-07.txt`): nwgreen1024 /u/3 s1-3, nwgreen1026 /u/4 s4-6. 6클립 모두 첫 시도 통과. 아기 고슴도치는 "a natural wild animal"로만 묘사했고 옷이 생기지 않았다. BGM은 Flow Music "The Snow Park Kite". 50초, -18.5 LUFS. `~/Desktop/tofu_07.mp4` **미업로드**
+- 네 계정 탭에서 동시에 돌리고 계정마다 순차로 보냈다(응답이 온 뒤 다음 프롬프트). 12클립 약 15분
+- 함정: 그리드 다운로드에서 다운로드 서브메뉴가 뜨기 전에 720p를 누르면 타일 **즐겨찾기**가 눌린다(2번 발생, 타일 메뉴의 "즐겨찾기 삭제"로 되돌렸다). 다운로드를 누르고 1초 기다린 뒤 스크린샷으로 확인하고 720p를 누른다
+- 함정: Flow Music 홈의 빈 프롬프트 영역을 클릭하면 제안 칩이 눌려 전송된다. 입력 후 스크린샷으로 확인하고 보낸다
+- 다음 Tofu 업로드 전: Mac Chrome의 틱톡·인스타가 aistorycozy로 로그인돼 있으니 Tiny Cozy Stories·whatttsts로 바꿔야 한다
