@@ -1483,3 +1483,13 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
 - 함정: 그리드 다운로드에서 다운로드 서브메뉴가 뜨기 전에 720p를 누르면 타일 **즐겨찾기**가 눌린다(2번 발생, 타일 메뉴의 "즐겨찾기 삭제"로 되돌렸다). 다운로드를 누르고 1초 기다린 뒤 스크린샷으로 확인하고 720p를 누른다
 - 함정: Flow Music 홈의 빈 프롬프트 영역을 클릭하면 제안 칩이 눌려 전송된다. 입력 후 스크린샷으로 확인하고 보낸다
 - 다음 Tofu 업로드 전: Mac Chrome의 틱톡·인스타가 aistorycozy로 로그인돼 있으니 Tiny Cozy Stories·whatttsts로 바꿔야 한다
+
+### 2026-10-15 실행 기록 — Tofu #7 발행, Mochi #13 제작·발행, Tofu #8 제작
+- Tofu #7 발행: YouTube SliceverseAI https://youtube.com/shorts/3Rb8TOEqhZM (첫 댓글 "What would you want Tofu to help with next? 🪁"), 틱톡 Tiny Cozy Stories, 인스타 whatttsts(사용자가 파일을 끌어다 놓음)
+- Mochi #13 "Mochi vs the Egg 🥚 | Cozy AI Story #13" (`templates/story-mochi-13.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. 6클립 모두 첫 시도 통과. BGM은 Flow Music "The Egg Guardian". 50초, -19.5 LUFS
+  - s3가 슬로우모션으로 나오고 끝 구도가 s4 시작과 안 맞아 사용자가 반려했다. hoohihi123123 /u/1에서 "normal real-time speed, never slow motion" + s4 시작 구도로 끝나게 다시 만들었다(`templates/story-mochi-13-s3-remake.txt`). 원본은 `raw_old/s3_orig.mp4`
+  - 발행: YouTube Cozy AI Story https://youtube.com/shorts/To7ZgEiM67A (저작권 검사 통과), 틱톡 @aistorycozy(검토 중), 인스타 aistorycozy 릴스. 세 곳 모두 도구 업로드가 됐다. 캡션 "Mochi vs the egg 🥚 Don't roll away! #cat #kitten #aistory #cuteanimals"(유튜브는 #shorts 추가)
+  - 틱톡 AI 스위치는 접힌 "펼치기" 고급 설정 안에 있고 기본값 OFF였다. 펼친 뒤 켜고 스크린샷으로 확인했다
+  - 틱톡 업로드 화면에 "편집 중인 동영상이 저장되지 않았습니다" 알림이 떠 있었다. 출처를 몰라 건드리지 않았다
+- Tofu #8 "She Was Freezing in the Snow... So Tofu Built Her a Home" 제작: 아기 토끼를 "a natural wild animal with bare soft fluffy pure white fur"로만 묘사, 옷 안 생김. BGM은 Flow Music "Lantern for a Bunny". 50초, -18.6 LUFS. `~/Desktop/tofu_08.mp4` **미업로드**
+- 액션 장면에는 "everything moves at normal real-time speed, lively and quick, never slow motion"을 넣고, 클립 N의 끝 프레임과 클립 N+1의 첫 프레임을 QC에서 비교한다
