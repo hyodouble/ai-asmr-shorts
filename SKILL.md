@@ -1493,3 +1493,10 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
   - 틱톡 업로드 화면에 "편집 중인 동영상이 저장되지 않았습니다" 알림이 떠 있었다. 출처를 몰라 건드리지 않았다
 - Tofu #8 "She Was Freezing in the Snow... So Tofu Built Her a Home" 제작: 아기 토끼를 "a natural wild animal with bare soft fluffy pure white fur"로만 묘사, 옷 안 생김. BGM은 Flow Music "Lantern for a Bunny". 50초, -18.6 LUFS. `~/Desktop/tofu_08.mp4`. 2026-10-16 발행: YouTube SliceverseAI https://youtube.com/shorts/X0b-eph0L_w (첫 댓글 "Would you want to sleep in Tofu's igloo? 🐰❄️"), 틱톡 Tiny Cozy Stories, 인스타 whatttsts(사용자가 파일을 끌어다 놓음)
 - 액션 장면에는 "everything moves at normal real-time speed, lively and quick, never slow motion"을 넣고, 클립 N의 끝 프레임과 클립 N+1의 첫 프레임을 QC에서 비교한다
+
+### 2026-10-16 실행 기록 — Tofu #8 발행, Mochi #14·Tofu #9 제작
+- Mochi #14 "Mochi vs the Yarn Ball 🧶 | Cozy AI Story #14" (`templates/story-mochi-14.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. 6클립 모두 첫 시도 통과. 모든 클립에 "normal real-time speed, never slow motion"을 넣고 끝 구도를 다음 클립 시작과 맞췄다. BGM은 Flow Music "Yarn Chase". 50초, -21.0 LUFS. `~/Desktop/mochi_14.mp4` **미업로드**
+- Tofu #9 "She Dropped All Her Acorns... So Tofu Helped Her Find Every One 🐿️💛 #9" (`templates/story-tofu-09.txt`): nwgreen1024 /u/3 s1-3, nwgreen1026 /u/4 s4-6. 아기 다람쥐는 "a natural wild animal"로만 묘사해 옷이 생기지 않았다. BGM은 Flow Music "Little Helpers". 47.9초, -18.0 LUFS. `~/Desktop/tofu_09.mp4` **미업로드**
+  - s1에서 "drooping ears" 때문에 다람쥐 귀가 3~5초 동안 토끼 귀처럼 늘어졌고, 5.3초에 컷이 튀었다. 다시 만들지 않고 0-2.8초와 5.5-10초 두 조각으로 나눠 s1, s2로 썼다(원본은 `raw_old/s1_orig.mp4`). 다람쥐에게 "drooping ears"를 쓰지 않는다
+  - ffmpeg 9.0.1의 anlmdn은 다시 인코딩한 4.505초 클립의 스트림 끝에서 segfault가 났다. `CUTS="0-2.8 0-4.5"`로 끝을 조금 잘라 해결했다
+- 네 계정 탭에서 동시에 돌렸고 12클립에 약 10분 걸렸다. 그리드 다운로드는 타일에 hover한 뒤 ⋮ → 다운로드 → 1초 대기 → 720p 순서로 문제없이 됐다
