@@ -1491,5 +1491,5 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
   - 발행: YouTube Cozy AI Story https://youtube.com/shorts/To7ZgEiM67A (저작권 검사 통과), 틱톡 @aistorycozy(검토 중), 인스타 aistorycozy 릴스. 세 곳 모두 도구 업로드가 됐다. 캡션 "Mochi vs the egg 🥚 Don't roll away! #cat #kitten #aistory #cuteanimals"(유튜브는 #shorts 추가)
   - 틱톡 AI 스위치는 접힌 "펼치기" 고급 설정 안에 있고 기본값 OFF였다. 펼친 뒤 켜고 스크린샷으로 확인했다
   - 틱톡 업로드 화면에 "편집 중인 동영상이 저장되지 않았습니다" 알림이 떠 있었다. 출처를 몰라 건드리지 않았다
-- Tofu #8 "She Was Freezing in the Snow... So Tofu Built Her a Home" 제작: 아기 토끼를 "a natural wild animal with bare soft fluffy pure white fur"로만 묘사, 옷 안 생김. BGM은 Flow Music "Lantern for a Bunny". 50초, -18.6 LUFS. `~/Desktop/tofu_08.mp4` **미업로드**
+- Tofu #8 "She Was Freezing in the Snow... So Tofu Built Her a Home" 제작: 아기 토끼를 "a natural wild animal with bare soft fluffy pure white fur"로만 묘사, 옷 안 생김. BGM은 Flow Music "Lantern for a Bunny". 50초, -18.6 LUFS. `~/Desktop/tofu_08.mp4`. 2026-10-16 발행: YouTube SliceverseAI https://youtube.com/shorts/X0b-eph0L_w (첫 댓글 "Would you want to sleep in Tofu's igloo? 🐰❄️"), 틱톡 Tiny Cozy Stories, 인스타 whatttsts(사용자가 파일을 끌어다 놓음)
 - 액션 장면에는 "everything moves at normal real-time speed, lively and quick, never slow motion"을 넣고, 클립 N의 끝 프레임과 클립 N+1의 첫 프레임을 QC에서 비교한다
