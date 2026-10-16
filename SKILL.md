@@ -1495,7 +1495,9 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
 - 액션 장면에는 "everything moves at normal real-time speed, lively and quick, never slow motion"을 넣고, 클립 N의 끝 프레임과 클립 N+1의 첫 프레임을 QC에서 비교한다
 
 ### 2026-10-16 실행 기록 — Tofu #8 발행, Mochi #14·Tofu #9 제작
-- Mochi #14 "Mochi vs the Yarn Ball 🧶 | Cozy AI Story #14" (`templates/story-mochi-14.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. 6클립 모두 첫 시도 통과. 모든 클립에 "normal real-time speed, never slow motion"을 넣고 끝 구도를 다음 클립 시작과 맞췄다. BGM은 Flow Music "Yarn Chase". 50초, -21.0 LUFS. `~/Desktop/mochi_14.mp4` **미업로드**
+- Mochi #14 "Mochi vs the Yarn Ball 🧶 | Cozy AI Story #14" (`templates/story-mochi-14.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. 6클립 모두 첫 시도 통과. 모든 클립에 "normal real-time speed, never slow motion"을 넣고 끝 구도를 다음 클립 시작과 맞췄다. BGM은 Flow Music "Yarn Chase". 50초, -20.2 LUFS. `~/Desktop/mochi_14.mp4` **미업로드**
+  - 사용자 반려 2건을 hoohihi123123 /u/1 직접 생성 모드로 다시 만들었다(`templates/story-mochi-14-remake.txt`). s1은 너무 가까이 찍혀(고양이가 크고 공이 바로 옆) s2의 먼 구도와 안 맞았다. "Medium-wide shot ... about one fifth of the frame height ... two kitten-lengths"로 거리를 숫자로 고정했다. s5는 3초에 털실 공이 갑자기 나타났다. "the yarn ball is already lying ... from the very first frame to the last; it never appears or disappears"로 해결했다. 원본은 `raw_old/`
+  - 교훈: 클립마다 카메라 거리(캐릭터가 화면 높이의 몇 분의 1인지)와 소품 위치를 첫 프레임 문장에 적는다
 - Tofu #9 "She Dropped All Her Acorns... So Tofu Helped Her Find Every One 🐿️💛 #9" (`templates/story-tofu-09.txt`): nwgreen1024 /u/3 s1-3, nwgreen1026 /u/4 s4-6. 아기 다람쥐는 "a natural wild animal"로만 묘사해 옷이 생기지 않았다. BGM은 Flow Music "Little Helpers". 47.9초, -18.0 LUFS. `~/Desktop/tofu_09.mp4` **미업로드**
   - s1에서 "drooping ears" 때문에 다람쥐 귀가 3~5초 동안 토끼 귀처럼 늘어졌고, 5.3초에 컷이 튀었다. 다시 만들지 않고 0-2.8초와 5.5-10초 두 조각으로 나눠 s1, s2로 썼다(원본은 `raw_old/s1_orig.mp4`). 다람쥐에게 "drooping ears"를 쓰지 않는다
   - ffmpeg 9.0.1의 anlmdn은 다시 인코딩한 4.505초 클립의 스트림 끝에서 segfault가 났다. `CUTS="0-2.8 0-4.5"`로 끝을 조금 잘라 해결했다
