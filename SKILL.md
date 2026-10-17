@@ -1506,3 +1506,7 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
 ### 2026-10-17 실행 기록 — Tofu #9 YouTube 발행
 - YouTube SliceverseAI https://youtube.com/shorts/iF4bSGggLDk (제목 "She Dropped All Her Acorns... So Tofu Helped Her Find Every One 🐿️💛 #9", 아동용 아님, 변경된 콘텐츠 "예", 저작권 검사 통과, 첫 댓글 "Who should Tofu help next? 🐿️🌰"), 인스타 whatttsts 릴스(도구 file_upload 통과, 자르기 9:16, AI 레이블 켬). 틱톡 Tiny Cozy Stories(웹에 계정 전환이 없어 사용자가 재로그인, AI 생성 콘텐츠 켬). 이제 크롬 틱톡은 Tiny Cozy Stories라 Mochi 올릴 땐 aistorycozy 재로그인 필요
 - 업로드 창 설명란에서 Escape를 누르면 해시태그 제안만이 아니라 창 전체가 닫힌다(초안 저장됨). `초안 수정`으로 다시 열면 된다
+
+### 2026-10-17 실행 기록 — Tofu #10·Mochi #15 제작
+- Tofu #10 "She Kept Falling on the Ice... So Tofu Taught Her to Skate ⛸️💛" (`templates/story-tofu-10.txt`): nwgreen1024 /u/3 s1-3, nwgreen1026 /u/4 s4-6. 새 친구 아기 오리("natural wild animal, bare soft fluffy bright yellow down"), 공원에 작은 언 연못 추가. 6클립 모두 첫 시도 통과, 옷 드리프트 없음. 프롬프트 앞에 "text-to-video only, without using any image or video from this project as a reference"를 붙였다. BGM은 Flow Music "First Snow Waltz". 50초, -17.7 LUFS. `~/Desktop/tofu_10.mp4`(7.6 MB). 미업로드
+- Mochi #15 "Mochi vs the Feather 🪶 | Cozy AI Story #15" (`templates/story-mochi-15.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. 6클립 모두 첫 시도 통과. 남긴 흠: s2에 창문 커튼이 1초 들어옴(바람으로 읽힘), s3 배경 드리프트(흰 상부장), s5 후반 깃털이 잘 안 보임. BGM은 Flow Music "Tiptoe Parade". 50초, -19.0 LUFS. `~/Desktop/mochi_15.mp4`(9.4 MB). 미업로드
