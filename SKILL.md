@@ -1502,3 +1502,7 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
   - s1에서 "drooping ears" 때문에 다람쥐 귀가 3~5초 동안 토끼 귀처럼 늘어졌고, 5.3초에 컷이 튀었다. 다시 만들지 않고 0-2.8초와 5.5-10초 두 조각으로 나눠 s1, s2로 썼다(원본은 `raw_old/s1_orig.mp4`). 다람쥐에게 "drooping ears"를 쓰지 않는다
   - ffmpeg 9.0.1의 anlmdn은 다시 인코딩한 4.505초 클립의 스트림 끝에서 segfault가 났다. `CUTS="0-2.8 0-4.5"`로 끝을 조금 잘라 해결했다
 - 네 계정 탭에서 동시에 돌렸고 12클립에 약 10분 걸렸다. 그리드 다운로드는 타일에 hover한 뒤 ⋮ → 다운로드 → 1초 대기 → 720p 순서로 문제없이 됐다
+
+### 2026-10-17 실행 기록 — Tofu #9 YouTube 발행
+- YouTube SliceverseAI https://youtube.com/shorts/iF4bSGggLDk (제목 "She Dropped All Her Acorns... So Tofu Helped Her Find Every One 🐿️💛 #9", 아동용 아님, 변경된 콘텐츠 "예", 저작권 검사 통과, 첫 댓글 "Who should Tofu help next? 🐿️🌰"). 틱톡·인스타는 아직
+- 업로드 창 설명란에서 Escape를 누르면 해시태그 제안만이 아니라 창 전체가 닫힌다(초안 저장됨). `초안 수정`으로 다시 열면 된다
