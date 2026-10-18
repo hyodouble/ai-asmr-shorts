@@ -18,3 +18,5 @@ Pixabay tracks kept getting YouTube Content ID claims, so from 2026-10-09 every 
 | little-helpers_flowmusic-ai.m4a | Tofu #9 "acorns" | Instrumental only; warm heartwarming; music box, celesta, acoustic guitar, soft strings, cozy peaceful ending | 2026-10-16 (1:00) |
 | first-snow-waltz_flowmusic-ai.m4a | Tofu #10 "ice skating" | Instrumental only; gentle warm winter waltz; music box, pizzicato, glockenspiel, celesta, shy to joyful, cozy ending | 2026-10-17 (1:01) |
 | tiptoe-parade_flowmusic-ai.m4a | Cozy AI Story #15 "Mochi vs the Feather" | Instrumental only; light playful cartoon; airy flute, pizzicato, marimba, clarinet, sneaky then triumphant, sleepy ending | 2026-10-17 (1:00) |
+| winter-whimsy_flowmusic-ai.m4a | Tofu #11 "berries" | Instrumental only; warm hopeful winter; felt piano, pizzicato, celesta, acoustic guitar, wistful to joyful, cozy ending | 2026-10-18 (1:02) |
+| curious-caper_flowmusic-ai.m4a | Cozy AI Story #16 "Mochi vs the Spinning Top" | Instrumental only; bouncy curious cartoon; pizzicato, xylophone, bassoon, brushed snare, wobbly middle, sleepy ending | 2026-10-18 (1:02) |
