@@ -1513,6 +1513,6 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
 
 ### 2026-10-18 실행 기록 — Tofu #11·Mochi #16 제작
 - Tofu #11 "She Couldn't Reach the Berries... So Tofu Climbed Up to Help 🍒💛" (`templates/story-tofu-11.txt`): nwgreen1024 /u/3 s1-3, nwgreen1026 /u/4 s4-6. 새 친구 아기 사슴("natural wild animal, bare soft light reddish-brown fur with little white spots"), 벤치 옆에 빨간 열매 덤불 추가. 원래 s1(첫 프레임에 사슴 혼자, 슬픈 얼굴, Tofu는 나중에 등장)은 "실패: 서드 파티 콘텐츠 제공업체의 이견"으로 두 번 막혔다(크레딧 차감 없음). 유명 아기 사슴 캐릭터처럼 읽힌 듯하다. Tofu가 처음부터 같이 있고 슬픈 얼굴을 뺀 수정본은 한 번에 통과했다. **아기 사슴은 첫 프레임에 혼자 두지 않는다.** BGM은 Flow Music "Winter Whimsy". 50초, -18.2 LUFS. `~/Desktop/tofu_11.mp4`(8.5 MB). 미업로드
-- Mochi #16 "Mochi vs the Spinning Top 🌀 | Cozy AI Story #16" (`templates/story-mochi-16.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. 6클립 모두 첫 시도 통과. 팽이 소리는 넓은 대역 잡음이라 notch 불필요. BGM은 Flow Music "Curious Caper". 50초, -19.8 LUFS. `~/Desktop/mochi_16.mp4`(8.7 MB). 미업로드
+- Mochi #16 "Mochi vs the Spinning Top 🌀 | Cozy AI Story #16" (`templates/story-mochi-16.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. 6클립 모두 첫 시도 통과. 팽이 소리는 넓은 대역 잡음이라 notch 불필요. BGM은 Flow Music "Curious Caper". 50초, -19.8 LUFS. `~/Desktop/mochi_16.mp4`(8.7 MB). 2026-10-18 발행: YouTube Cozy AI Story https://youtube.com/shorts/WUC_ANAlN6k (저작권 검사 통과), 틱톡 @aistorycozy(AI 라벨 켬), 인스타 aistorycozy 릴스(AI 레이블 켬). 세 곳 모두 도구 업로드 됨
 - 높이 730 px Flow 탭에서는 그리드 타일 메뉴가 24 px 아래에 열린다(다운로드 y=338, 720p y=406). 예전 좌표로 누르면 "프롬프트에 추가"가 눌려 타일이 프롬프트 창에 붙는다
 
