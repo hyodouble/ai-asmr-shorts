@@ -1516,3 +1516,7 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
 - Mochi #16 "Mochi vs the Spinning Top 🌀 | Cozy AI Story #16" (`templates/story-mochi-16.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. 6클립 모두 첫 시도 통과. 팽이 소리는 넓은 대역 잡음이라 notch 불필요. BGM은 Flow Music "Curious Caper". 50초, -19.8 LUFS. `~/Desktop/mochi_16.mp4`(8.7 MB). 2026-10-18 발행: YouTube Cozy AI Story https://youtube.com/shorts/WUC_ANAlN6k (저작권 검사 통과), 틱톡 @aistorycozy(AI 라벨 켬), 인스타 aistorycozy 릴스(AI 레이블 켬). 세 곳 모두 도구 업로드 됨
 - 높이 730 px Flow 탭에서는 그리드 타일 메뉴가 24 px 아래에 열린다(다운로드 y=338, 720p y=406). 예전 좌표로 누르면 "프롬프트에 추가"가 눌려 타일이 프롬프트 창에 붙는다
 
+### 2026-10-19 실행 기록 — Tofu #12·Mochi #17 제작
+- Tofu #12 "She Was Scared to Fly... So Tofu Showed Her How 🦉💛" (`templates/story-tofu-12.txt`): nwgreen1024 /u/3 s1-3, nwgreen1026 /u/4 s4-6. 새 친구 아기 부엉이("natural wild animal, bare soft fluffy brown-and-cream speckled feathers"), 벤치 앞 눈더미 추가. 모든 클립 첫 프레임에 Tofu를 같이 둬서 6클립 모두 첫 시도 통과. BGM은 Flow Music "Flight Lesson at Dusk"(2:57, 앞 50초만 씀). 50초, -18.0 LUFS. `~/Desktop/tofu_12.mp4`(7.7 MB). 미업로드
+- Mochi #17 "Mochi vs the Tissue Box 🧻 | Cozy AI Story #17" (`templates/story-mochi-17.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. s5가 Flow 안에서 "문제가 발생했습니다"로 실패(타일 99%에서 멈췄다가 새로고침하니 사라짐)해 에이전트로 다시 보냈고 통과했다. 남긴 흠: s1 휴지가 저절로 날아감, s5·s6 빈 상자에 휴지가 보임, s6 휴지 둥지 아래 바구니 등장. BGM은 Flow Music "Tissue Box Mischief". 50초, -20.2 LUFS. `~/Desktop/mochi_17.mp4`(9.3 MB). 미업로드
+
