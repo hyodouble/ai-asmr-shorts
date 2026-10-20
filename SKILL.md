@@ -21,6 +21,12 @@ description: 상품/쿠팡 없이 AI로 ASMR 영상을 만든다. 수면용 1시
 - 채널 이름, 핸들, 소개글에는 펭귄이나 Tofu를 넣지 않는다. 캐릭터가 바뀔 수 있어서 "stories"로 표현한다.
 - 작업 폴더: `Desktop/asmr_work/shorts/<날짜>/`. RESUME.md에 기록한다.
 
+## 2026-10-20 Mochi 외형 고정 — Flow 캐릭터 (Mochi 클립은 이 절 우선)
+
+- 회차마다 모찌 털색·귀 반점·체형·목도리가 달라졌다(글 설명만으로 매번 새로 그림). 두 Mochi 프로젝트(/u/0 b4b28eeb, /u/2 e9990f1d)에 Flow 캐릭터 `Mochi`를 등록했다. 기준 이미지와 사용법은 `characters/mochi/README.md`.
+- 모든 Mochi 클립: 에이전트 입력창에 `@` → Mochi(캐릭터) → 프롬프트에 추가 → 클립 프롬프트 붙여넣기. "text-to-video only, without using any image" 문구는 Tofu 전용이라 Mochi에는 쓰지 않는다.
+- 외형 문장은 캐릭터와 같게: cream-white, big round blue-grey eyes, soft peach-tinted ears, red knitted scarf with fringed ends. "ginger patch over its left ear"는 뺐다(기준 이미지에 없음).
+
 ## 2026-10-04 전면 개편 — 캐릭터 스토리 포맷 + 오디오 체인 폐기 (이 절이 아래 모든 오디오 규칙보다 우선)
 
 **왜:** AI ASMR(하이드로딥 #1~#4, 점토집 #1)은 조회수 4~14회였다. 같은 주 다른 채널의 AI ASMR 숏츠도 1천~4천회에 그쳤다.
