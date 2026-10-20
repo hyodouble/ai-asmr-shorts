@@ -1531,3 +1531,10 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
 - Tofu #13 "She Was Too Tiny for the Deep Snow... So Tofu Carried Her 🐭💛" (`templates/story-tofu-13.txt`): nwgreen1024 /u/3 s1-3, nwgreen1026 /u/4 s4-6. 새 친구 아기 들쥐("natural wild animal, bare soft fluffy light-brown fur"), 큰 소나무 뿌리 사이 작은 구멍(집) 추가. 모든 클립 첫 프레임에 Tofu를 같이 둬서 6클립 모두 첫 시도 통과. s4는 배 미끄럼 대신 업고 걷기로 나옴(유지). BGM은 Flow Music "A Tiny Journey in the Snow". 50초, -18.2 LUFS. `~/Desktop/tofu_13.mp4`(7.8 MB). 미업로드
 - Mochi #18 "Mochi vs the Ping-Pong Ball 🏓 | Cozy AI Story #18" (`templates/story-mochi-18.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. supergiantapple은 16:31에 크레딧 한도로 거절(차감 없음), 16:38 리셋 뒤 16:41에 다시 보내 통과. 남긴 흠: s2에 공이 잠깐 두 개. BGM은 Flow Music "Tiptoe Mischief". 50초, -20.6 LUFS. `~/Desktop/mochi_18.mp4`(9.3 MB). 2026-10-20 발행: YouTube Cozy AI Story https://youtube.com/shorts/PRT98UC9EQo (저작권 검사 통과), 틱톡 @aistorycozy(AI 라벨 켬), 인스타 aistorycozy 릴스(AI 레이블 켬)
 - 긴 프롬프트는 타이핑 대신 `pbcopy < pN.txt` 후 에이전트 입력창에 cmd+v로 붙여 보냈다. 빠르고 오타가 없다. nwgreen 두 계정은 크레딧 갱신이 오후 3:47이라 16:30에 바로 보낼 수 있었다
+
+### 2026-10-21 실행 기록 — 2분 롱폼 "Dabao's First Job" (hoohihi123123)
+- 샤오훙수(rednote) "AI视频" 인기 상위는 실사풍 뚱뚱한 주황 고양이가 사람처럼 사는 영상(시장 브이로그, 첫 알바, 감동 반전), 1~2분. 검색은 사용자 로그인 필요
+- hoohihi123123 Flow /u/1(PRO, 약 1,050크레딧): Veo 3.1 Quality 100/클립(8초), Fast 20, Omni Flash 12, Nano Banana 2.1 이미지 0. **Quality는 캐릭터(구성요소) 첨부 불가**, Fast는 가능
+- 방식: Flow 캐릭터 Dabao·Grandma 생성 → Quality 장면은 Nano Banana로 캐릭터 첨부 첫 프레임 이미지 → 프레임 모드 시작 프레임 + Quality, 나머지는 Fast + @캐릭터. 15×8초=120초 (`templates/long-dabao-01.txt`)
+- 실패는 모두 환불. s13은 같은 첫 프레임으로 Quality 3회·Fast 1회 99%에서 멈춰 실패, 프레임 없이 Fast + @Dabao로 통과
+- BGM Flow Music "Bakery Cat Score"(2:08). SPEED=1 BGMLUFS=-24, -17.7 LUFS. `~/Desktop/dabao_first_job.mp4`. 미업로드
