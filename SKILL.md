@@ -1528,7 +1528,7 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
 
 
 ### 2026-10-20 실행 기록 — Tofu #13·Mochi #18 제작
-- Tofu #13 "She Was Too Tiny for the Deep Snow... So Tofu Carried Her 🐭💛" (`templates/story-tofu-13.txt`): nwgreen1024 /u/3 s1-3, nwgreen1026 /u/4 s4-6. 새 친구 아기 들쥐("natural wild animal, bare soft fluffy light-brown fur"), 큰 소나무 뿌리 사이 작은 구멍(집) 추가. 모든 클립 첫 프레임에 Tofu를 같이 둬서 6클립 모두 첫 시도 통과. s4는 배 미끄럼 대신 업고 걷기로 나옴(유지). BGM은 Flow Music "A Tiny Journey in the Snow". 50초, -18.2 LUFS. `~/Desktop/tofu_13.mp4`(7.8 MB). 미업로드
+- Tofu #13 "She Was Too Tiny for the Deep Snow... So Tofu Carried Her 🐭💛" (`templates/story-tofu-13.txt`): nwgreen1024 /u/3 s1-3, nwgreen1026 /u/4 s4-6. 새 친구 아기 들쥐("natural wild animal, bare soft fluffy light-brown fur"), 큰 소나무 뿌리 사이 작은 구멍(집) 추가. 모든 클립 첫 프레임에 Tofu를 같이 둬서 6클립 모두 첫 시도 통과. s4는 배 미끄럼 대신 업고 걷기로 나옴(유지). BGM은 Flow Music "A Tiny Journey in the Snow". 50초, -18.2 LUFS. `~/Desktop/tofu_13.mp4`(7.8 MB). 2026-10-21 발행: YouTube SliceverseAI https://youtube.com/shorts/gYu59KdC9ck (저작권 검사 통과, 첫 댓글 "Who should Tofu carry next? 🐭❄️"), 틱톡 Tiny Cozy Stories(AI 라벨 켬), 인스타 whatttsts 릴스(AI 레이블 켬). 세 곳 모두 도구 업로드가 바로 됐다
 - Mochi #18 "Mochi vs the Ping-Pong Ball 🏓 | Cozy AI Story #18" (`templates/story-mochi-18.txt`): gksgytjr1027 /u/0 s1-3, supergiantapple /u/2 s4-6. supergiantapple은 16:31에 크레딧 한도로 거절(차감 없음), 16:38 리셋 뒤 16:41에 다시 보내 통과. 남긴 흠: s2에 공이 잠깐 두 개. BGM은 Flow Music "Tiptoe Mischief". 50초, -20.6 LUFS. `~/Desktop/mochi_18.mp4`(9.3 MB). 2026-10-20 발행: YouTube Cozy AI Story https://youtube.com/shorts/PRT98UC9EQo (저작권 검사 통과), 틱톡 @aistorycozy(AI 라벨 켬), 인스타 aistorycozy 릴스(AI 레이블 켬)
 - 긴 프롬프트는 타이핑 대신 `pbcopy < pN.txt` 후 에이전트 입력창에 cmd+v로 붙여 보냈다. 빠르고 오타가 없다. nwgreen 두 계정은 크레딧 갱신이 오후 3:47이라 16:30에 바로 보낼 수 있었다
 
@@ -1536,3 +1536,9 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
 - 사용자 판정: 소리가 엉망이고 오브젝트가 갑자기 생기는 문제가 너무 많아 전부 폐기(영상·프롬프트·BGM 삭제). Veo 3.1 Fast/Quality 혼합, 첫 프레임 이미지→Quality, 장면 15개를 따로 생성해 이어 붙인 방식이었다. 같은 방식으로 다시 만들지 않는다
 - 이어서 사용자 요청으로 v2 제작: 1초 간격 프레임 + 스펙트로그램 검수. Veo가 "No music"인데도 s11에 피아노 멜로디를 넣었고, 클립 소리를 최대 +18 dB 키운 게 "소리 엉망"의 원인 → 클립 오디오 전부 음소거(AFn=volume=0), BGM만 쓰되 곡 끝이 마지막 장면에 오도록 앞 13초를 건너뜀. 10클립 유지, 2클립 트림, 3클립(물건·사람이 갑자기 나타남)은 Fast + @Dabao로 재생성(프롬프트에 "모든 인물·소품은 첫 프레임부터 보이고 아무것도 새로 나타나지 않는다" 추가). `~/Desktop/dabao_first_job_v2.mp4`(115초)
 - **롱폼 검수 규칙:** 클립마다 1초 간격 프레임을 보고, 클립 소리는 스펙트로그램으로 멜로디·말소리를 확인한다. 이야기형 롱폼은 클립 오디오를 기본으로 빼고 BGM 하나로 간다
+
+### 2026-10-21 실행 기록 — Mochi #19·Tofu #14 제작
+- 테스트 크롬(issuecatch `.pwprofile-chrome`, 9222)에 확장이 붙으면 /u/2·3·4가 /u/0으로 튕긴다(그 프로필엔 gksgytjr1027·hoohihi123123만 로그인). Flow·업로드는 일반 크롬("hyo MacBook Neo")을 `select_browser`로 골라서 한다(사용자 지시)
+- Mochi #19 "Mochi vs the Cardboard Box 📦 | Cozy AI Story #19" (`templates/story-mochi-19.txt`): 처음으로 모든 클립에 Flow 캐릭터 @Mochi를 붙였다. 6클립 모두 첫 시도, 외형이 캐릭터와 같았다. /u/0 에이전트가 클립마다 "문제가 발생했습니다"를 띄웠지만 결과물은 정상. s2 끝(6.5초~)의 3음 차임은 detone.py로 지움(원본 raw_old/). BGM은 Flow Music "Kitten in a Box". 50초, -19.7 LUFS. `~/Desktop/mochi_19.mp4`(9.4 MB). 미업로드
+- Tofu #14 "She Couldn't Cross the Stream... So Tofu Built Her a Bridge 🦝💛" (`templates/story-tofu-14.txt`): 새 친구 아기 너구리("natural wild animal, bare soft fluffy grey fur"), 공원에 좁은 개울·건너편 굴·쓰러진 솔가지 추가. 6클립 첫 시도. s3의 4.1~8.2초 350~550 Hz 드론은 `AF3="bandreject=f=450:width_type=h:w=220:enable='between(t,4.1,8.2)'"`로 지움. BGM은 Flow Music "Snowy Stream Bridge". 50초, -18.7 LUFS. CRF 31은 10.3 MB라 CRF 32로 `~/Desktop/tofu_14.mp4`(9.3 MB). 미업로드
+
