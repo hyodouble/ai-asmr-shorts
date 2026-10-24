@@ -24,3 +24,5 @@ Pixabay tracks kept getting YouTube Content ID claims, so from 2026-10-09 every 
 | tissue-box-mischief_flowmusic-ai.m4a | Cozy AI Story #17 "Mochi vs the Tissue Box" | Instrumental only; mischievous fluffy cartoon; pizzicato, clarinet, marimba, brushed percussion, guilty pause, sleepy ending | 2026-10-19 (1:01) |
 | acorn-tiptoe_flowmusic-ai.m4a | Cozy AI Story #21 "Mochi vs the Pumpkin" | Instrumental only; playful curious autumn cartoon; pizzicato, marimba, ukulele, tiptoe rhythm, sleepy ending | 2026-10-24 (1:58) |
 | fireside-friends_flowmusic-ai.m4a | Tofu #16 "fox pumpkin" | Instrumental only; warm heartwarming winter; acoustic guitar, soft piano, pizzicato, playful sliding middle | 2026-10-24 (3:00) |
+| the-sock-thief_flowmusic-ai.m4a | Cozy AI Story #22 "Mochi vs the Sock" | Instrumental only; mischievous bouncy cartoon; pizzicato, clarinet, marimba, brushed percussion, sleepy ending | 2026-10-24 (2:56) |
+| pawprints-home_flowmusic-ai.m4a | Tofu #17 "bear cub den" | Instrumental only; tender hopeful winter; piano, acoustic guitar, strings, tiptoe walking middle, goodnight ending | 2026-10-24 (2:54) |
