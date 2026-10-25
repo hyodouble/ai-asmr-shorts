@@ -4,6 +4,15 @@ description: 상품/쿠팡 없이 AI로 ASMR 영상을 만든다. 수면용 1시
 ---
 
 
+## 2026-10-25 팔로우 유도 — Mochi·Tofu 스토리 전부 (제작·업로드 때 꼭 넣는다)
+
+인스타 조회수에 비해 팔로우가 안 늘었다. 팔로워 구매는 하지 않는다(반응률이 떨어져 노출이 줄고, 약관 위반이다). 대신 연재물이라는 걸 보여 준다.
+
+- **영상 끝 카드**: `python3 scripts/make_endcard.py <작업폴더> <다음 회차 번호>` 로 `out/endcard.png` 를 만들면 `build-story.sh` 가 마지막 2.5초(`ENDSEC`)에 "To be continued in #N+1 / Follow so you don't miss it" 를 얹는다. 장면 자막과 겹치지 않게 아래쪽에 있다. 빌드 후 마지막 프레임을 눈으로 확인한다.
+- **캡션(인스타·틱톡·유튜브 설명)**: 지금처럼 한 줄 + 해시태그. 그 한 줄 끝에 `· #N+1 next` 를 붙인다. 예: `Mochi vs the egg 🥚 Don't roll away! · #14 next #cat #kitten #aistory #cuteanimals`. 다른 문장은 늘리지 않는다.
+- **첫 댓글**: 지금 하는 질문 댓글에 다음 회차 예고를 한 마디 붙인다. 예: `What should Mochi try next? 🐾 #14 is coming`.
+- 프로필 소개글 변경, 인기 회차 상단 고정은 계정 설정이라 사용자에게 먼저 묻는다.
+
 ## 2026-10-07 발행 채널 고정 — Tofu 스토리 (이 절이 최우선)
 
 - Tofu 캐릭터 스토리는 **세 곳에 모두** 올린다(2026-10-08 사용자 확정): **유튜브 SliceverseAI**(hoohihi123123 소유, YouTube authuser=2), **인스타 whatttsts**, **틱톡 Tiny Cozy Stories**.

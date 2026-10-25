@@ -8,6 +8,8 @@
 #   workdir/raw/s1.mp4 .. sN.mp4  Flow 720x1280 clips, played in order
 #   CUTS="0.5-9 1-7.5 ..."         optional in-out seconds per clip (default: whole clip)
 #   workdir/out/overlayN.png        optional 1080x1920 transparent caption PNG per clip
+#   workdir/out/endcard.png         optional follow card shown for the last ENDSEC seconds (make_endcard.py)
+#   ENDSEC=2.5                      how long the end card stays on screen
 #   BGM=music.mp3 BGMLUFS=-30       optional background track, looped, normalized under the SFX, faded in/out
 #   AF3="bandreject=f=395:width_type=h:w=40"  optional extra audio filter for clip N (static notch for a Flow drone)
 #   SPEED=1.2                       optional playback speed (atempo keeps pitch); default 1
@@ -27,7 +29,7 @@ DENOISE="highpass=f=300:p=2,anlmdn=s=$DN:p=0.01:r=0.006"
 lufs() { ffmpeg -nostdin -hide_banner -i "$1" -af ebur128=peak=true -f null - 2>&1 | awk '/^ +I:/{i=$2} /^ +Peak:/{p=$2} END{print i, p}'; }
 
 N=$(ls raw/s*.mp4 | wc -l | tr -d ' ')
-inputs=""; fc=""; cat_in=""; k=0
+inputs=""; fc=""; cat_in=""; k=0; vtotal=0
 for n in $(seq 1 "$N"); do
   src="raw/s$n.mp4"
   cut=$(echo "${CUTS:-}" | awk -v n="$n" '{print $n}')
@@ -48,6 +50,7 @@ for n in $(seq 1 "$N"); do
   ffmpeg -nostdin -v error -i "out/a${n}_pre.wav" -af "volume=${g}dB,afade=t=in:d=0.02,afade=t=out:st=$(awk -v d="$d" 'BEGIN{printf "%.4f", d-0.02}'):d=0.02" -c:a pcm_s24le "out/a$n.wav" -y
   rm "out/a${n}_pre.wav"
   echo "s$n $tag $1 LUFS peak $2 -> gain $g dB, cut $a-$b"
+  vtotal=$(awk -v t="$vtotal" -v d="$d" 'BEGIN{printf "%.4f", t+d}')
   inputs="$inputs -i $src -i out/a$n.wav"
   vf="trim=$a:$b,setpts=(PTS-STARTPTS)/$SPEED,$DELOGO,scale=1080:1920:flags=lanczos,fps=24,format=yuv420p"
   if [ -f "out/overlay$n.png" ]; then
@@ -65,11 +68,20 @@ if [ -n "${BGM:-}" ]; then
   total=0; for n in $(seq 1 "$N"); do total=$(awk -v t="$total" -v x="$(ffprobe -v error -show_entries format=duration -of csv=p=0 out/a$n.wav)" 'BEGIN{printf "%.4f", t+x}'); done
   ffmpeg -nostdin -v error -stream_loop -1 -i "$BGM" -t "$total" -af "aresample=48000,aformat=channel_layouts=stereo,loudnorm=I=${BGMLUFS:--30}:TP=-6:LRA=7,afade=t=in:d=1,afade=t=out:st=$(awk -v t="$total" 'BEGIN{printf "%.4f", t-2}'):d=2" -c:a pcm_s24le out/bgm.wav -y
   inputs="$inputs -i out/bgm.wav"
-  fc="$fc${cat_in}concat=n=$N:v=1:a=1[outv][sfx];[sfx][$k:a]amix=inputs=2:normalize=0:duration=first[outa0];[outa0]alimiter=limit=0.7:attack=1:release=50:level=disabled[outa]"
+  fc="$fc${cat_in}concat=n=$N:v=1:a=1[catv][sfx];[sfx][$k:a]amix=inputs=2:normalize=0:duration=first[outa0];[outa0]alimiter=limit=0.7:attack=1:release=50:level=disabled[outa]"
 else
-fc="$fc${cat_in}concat=n=$N:v=1:a=1[outv][outa0];[outa0]alimiter=limit=0.7:attack=1:release=50:level=disabled[outa]"
+fc="$fc${cat_in}concat=n=$N:v=1:a=1[catv][outa0];[outa0]alimiter=limit=0.7:attack=1:release=50:level=disabled[outa]"
 fi
 
+# Follow card over the last ENDSEC seconds (2026-10-25: views were fine but follows lagged, so the video says it is a series).
+if [ -f out/endcard.png ]; then
+  ks=$(awk -v t="$vtotal" -v e="${ENDSEC:-2.5}" 'BEGIN{printf "%.4f", t-e}')
+  e=$k; [ -n "${BGM:-}" ] && e=$((k + 1))
+  inputs="$inputs -loop 1 -t $vtotal -i out/endcard.png"
+  fc="$fc;[$e:v]format=rgba[ec];[catv][ec]overlay=0:0:enable='gte(t,$ks)'[outv]"
+else
+  fc="$fc;[catv]null[outv]"
+fi
 # shellcheck disable=SC2086
 ffmpeg -nostdin -v error $inputs -filter_complex "$fc" -map '[outv]' -map '[outa]' \
   -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -r 24 \
