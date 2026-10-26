@@ -10,6 +10,7 @@
 #   workdir/out/overlayN.png        optional 1080x1920 transparent caption PNG per clip
 #   workdir/out/endcard.png         optional follow card shown for the last ENDSEC seconds (make_endcard.py)
 #   ENDSEC=2.5                      how long the end card stays on screen
+#   ENDHOLD=2                       hold the last frame this many seconds (BGM keeps playing, fades out)
 #   BGM=music.mp3 BGMLUFS=-30       optional background track, looped, normalized under the SFX, faded in/out
 #   AF3="bandreject=f=395:width_type=h:w=40"  optional extra audio filter for clip N (static notch for a Flow drone)
 #   SPEED=1.2                       optional playback speed (atempo keeps pitch); default 1
@@ -65,22 +66,25 @@ for n in $(seq 1 "$N"); do
 done
 if [ -n "${BGM:-}" ]; then
   # One track for the whole video; Flow is prompted with "No music" so clips never bring their own.
-  total=0; for n in $(seq 1 "$N"); do total=$(awk -v t="$total" -v x="$(ffprobe -v error -show_entries format=duration -of csv=p=0 out/a$n.wav)" 'BEGIN{printf "%.4f", t+x}'); done
+  total=${ENDHOLD:-0}; for n in $(seq 1 "$N"); do total=$(awk -v t="$total" -v x="$(ffprobe -v error -show_entries format=duration -of csv=p=0 out/a$n.wav)" 'BEGIN{printf "%.4f", t+x}'); done
   ffmpeg -nostdin -v error -stream_loop -1 -i "$BGM" -t "$total" -af "aresample=48000,aformat=channel_layouts=stereo,loudnorm=I=${BGMLUFS:--30}:TP=-6:LRA=7,afade=t=in:d=1,afade=t=out:st=$(awk -v t="$total" 'BEGIN{printf "%.4f", t-2}'):d=2" -c:a pcm_s24le out/bgm.wav -y
   inputs="$inputs -i out/bgm.wav"
-  fc="$fc${cat_in}concat=n=$N:v=1:a=1[catv][sfx];[sfx][$k:a]amix=inputs=2:normalize=0:duration=first[outa0];[outa0]alimiter=limit=0.7:attack=1:release=50:level=disabled[outa]"
+  fc="$fc${cat_in}concat=n=$N:v=1:a=1[catv][sfx0];[sfx0]apad=pad_dur=${ENDHOLD:-0}[sfx];[sfx][$k:a]amix=inputs=2:normalize=0:duration=first[outa0];[outa0]alimiter=limit=0.7:attack=1:release=50:level=disabled[outa]"
 else
-fc="$fc${cat_in}concat=n=$N:v=1:a=1[catv][outa0];[outa0]alimiter=limit=0.7:attack=1:release=50:level=disabled[outa]"
+fc="$fc${cat_in}concat=n=$N:v=1:a=1[catv][outa1];[outa1]apad=pad_dur=${ENDHOLD:-0}[outa0];[outa0]alimiter=limit=0.7:attack=1:release=50:level=disabled[outa]"
 fi
 
+# Hold the final cozy pose (2026-10-26: trending animal Shorts end on a held hug/smile, no text card).
+fc="$fc;[catv]tpad=stop_mode=clone:stop_duration=${ENDHOLD:-0}[catv2]"
+vtotal=$(awk -v t="$vtotal" -v h="${ENDHOLD:-0}" 'BEGIN{printf "%.4f", t+h}')
 # Follow card over the last ENDSEC seconds (2026-10-25: views were fine but follows lagged, so the video says it is a series).
 if [ -f out/endcard.png ]; then
   ks=$(awk -v t="$vtotal" -v e="${ENDSEC:-2.5}" 'BEGIN{printf "%.4f", t-e}')
   e=$k; [ -n "${BGM:-}" ] && e=$((k + 1))
   inputs="$inputs -loop 1 -t $vtotal -i out/endcard.png"
-  fc="$fc;[$e:v]format=rgba[ec];[catv][ec]overlay=0:0:enable='gte(t,$ks)'[outv]"
+  fc="$fc;[$e:v]format=rgba[ec];[catv2][ec]overlay=0:0:enable='gte(t,$ks)'[outv]"
 else
-  fc="$fc;[catv]null[outv]"
+  fc="$fc;[catv2]null[outv]"
 fi
 # shellcheck disable=SC2086
 ffmpeg -nostdin -v error $inputs -filter_complex "$fc" -map '[outv]' -map '[outa]' \

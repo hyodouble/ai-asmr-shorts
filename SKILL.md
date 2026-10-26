@@ -8,7 +8,8 @@ description: 상품/쿠팡 없이 AI로 ASMR 영상을 만든다. 수면용 1시
 
 인스타 조회수에 비해 팔로우가 안 늘었다. 팔로워 구매는 하지 않는다(반응률이 떨어져 노출이 줄고, 약관 위반이다). 대신 연재물이라는 걸 보여 준다.
 
-- **영상 끝 카드**: `python3 scripts/make_endcard.py <작업폴더> <다음 회차 번호>` 로 `out/endcard.png` 를 만들면 `build-story.sh` 가 마지막 2.5초(`ENDSEC`)에 "To be continued in #N+1 / Follow so you don't miss it" 를 얹는다. 장면 자막과 겹치지 않게 아래쪽에 있다. 빌드 후 마지막 프레임을 눈으로 확인한다.
+- **영상 끝 (2026-10-26 변경)**: 글자 팔로우 카드(`make_endcard.py`)는 쓰지 않는다. 사용자가 "너무 조잡해 보인다"고 했고, 이번 달 조회수 상위 동물 쇼츠 10편(최대 670만 회)을 확인했더니 글자 카드는 하나도 없었다. 전부 포옹·미소 같은 따뜻한 마지막 장면을 1~3초 멈춰 두고 끝낸다. 그래서 `ENDHOLD=2 bash scripts/build-story.sh <폴더>` 로 마지막 프레임을 2초 정지하고, BGM은 그 위로 페이드아웃한다. 연재 안내는 캡션의 `· #N+1 next` 와 첫 댓글에만 둔다.
+- (폐기) 영상 끝 카드: `python3 scripts/make_endcard.py <작업폴더> <다음 회차 번호>` 로 `out/endcard.png` 를 만들면 `build-story.sh` 가 마지막 2.5초(`ENDSEC`)에 "To be continued in #N+1 / Follow so you don't miss it" 를 얹는다. 장면 자막과 겹치지 않게 아래쪽에 있다. 빌드 후 마지막 프레임을 눈으로 확인한다.
 - **캡션(인스타·틱톡·유튜브 설명)**: 지금처럼 한 줄 + 해시태그. 그 한 줄 끝에 `· #N+1 next` 를 붙인다. 예: `Mochi vs the egg 🥚 Don't roll away! · #14 next #cat #kitten #aistory #cuteanimals`. 다른 문장은 늘리지 않는다.
 - **첫 댓글**: 지금 하는 질문 댓글에 다음 회차 예고를 한 마디 붙인다. 예: `What should Mochi try next? 🐾 #14 is coming`.
 - 프로필 소개글 변경, 인기 회차 상단 고정은 계정 설정이라 사용자에게 먼저 묻는다.
