@@ -41,10 +41,13 @@ Full working example: `templates/story-tofu-22.txt`.
 - Food that gets eaten starts already in the eater's mouth/beak.
 - Flow can't draw "sunk up to her chest in snow"; write "lies on her tummy with legs tucked under her and buried".
 - "no antlers" grows antlers; describe the head instead.
+- "round snowdrift" is drawn as a snowman; write "one big round mound of piled snow shaped like a single giant snowball, not a snowman: no head, no face, no second ball" (#23).
+- "disappears behind X" is not drawn; send a prop out of the frame edge instead (#23).
 - Never write bell/chime. Props never span a container wall.
 
 ## Production setup (unchanged)
 - nwgreen1024 /u/3: s1-s3, nwgreen1026 /u/4: s4-s6 (or 5 clips if asked). Remakes on hoohihi123123 /u/1.
+- Current projects (from 2026-10-30): nwgreen1024 /u/3 bd7aa60c-2826-4d90-b2aa-f633d2e80d13, nwgreen1026 /u/4 a1916773-b245-4911-b9ea-debff1aa96d7, remakes hoohihi123123 /u/1 b9144382-172a-4215-839c-e9772a41e18e.
 - New project per account, agent auto-generate "안 함" (no approval card).
 - 1.2x speed, Flow Music BGM, captions per scene, ENDHOLD=2.
 
