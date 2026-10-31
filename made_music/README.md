@@ -30,3 +30,5 @@ Pixabay tracks kept getting YouTube Content ID claims, so from 2026-10-09 every 
 | grape-and-whiskers_flowmusic-ai.m4a | Cozy AI Story #25 "hedgehog grape" | Instrumental only; sunny playful kitchen; pizzicato, marimba, clarinet, ukulele, cuddly ending | 2026-10-27 (2:02) |
 | the-great-cheese-caper_flowmusic-ai.m4a | Cozy AI Story #27 "mouse cheese" | Instrumental only; playful sunny kitchen cartoon; pizzicato, bassoon, marimba, brushed percussion, heave-ho middle, cuddly ending | 2026-10-29 (3:01) |
 | first-snowfall-friends_flowmusic-ai.m4a | Tofu #22 "bunny first snow" | Instrumental only; gentle wonder-filled first snowfall; piano, pizzicato, light woodwinds, acoustic guitar, playful middle, cozy ending | 2026-10-29 (1:57) |
+| carrot-quest_flowmusic-ai.m4a | Mochi #29 | 2026-10-31 |
+| penguins-park-bench-stumble_flowmusic-ai.m4a | Tofu #24 | 2026-10-31 |
