@@ -32,3 +32,5 @@ Pixabay tracks kept getting YouTube Content ID claims, so from 2026-10-09 every 
 | first-snowfall-friends_flowmusic-ai.m4a | Tofu #22 "bunny first snow" | Instrumental only; gentle wonder-filled first snowfall; piano, pizzicato, light woodwinds, acoustic guitar, playful middle, cozy ending | 2026-10-29 (1:57) |
 | carrot-quest_flowmusic-ai.m4a | Mochi #29 | 2026-10-31 |
 | penguins-park-bench-stumble_flowmusic-ai.m4a | Tofu #24 | 2026-10-31 |
+| hiccup-hiccups_flowmusic-ai.m4a | Mochi #30 | 2026-11-01 |
+| penguins-winter-blunder_flowmusic-ai.m4a | Tofu #25 | 2026-11-01 |
