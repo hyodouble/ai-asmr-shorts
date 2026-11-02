@@ -44,6 +44,8 @@ Full working example: `templates/story-tofu-22.txt`.
 - "round snowdrift" is drawn as a snowman; write "one big round mound of piled snow shaped like a single giant snowball, not a snowman: no head, no face, no second ball" (#23).
 - "disappears behind X" is not drawn; send a prop out of the frame edge instead (#23).
 - Never write bell/chime. Props never span a container wall.
+- Slopes: "a slope toward the right edge" is drawn as ground rising, so objects roll uphill (#26). Write "flat hilltop; the ground falls away downhill toward the bottom-right corner, clearly lower than the hilltop" and "Gravity is real: anything that rolls or slides only ever moves downhill, getting lower in the frame; nothing ever rolls, slides or floats uphill."
+- Duplicates: a second penguin can appear mid-clip (#26 s2 at ~7 s). Add "There is only one penguin, Tofu; he never splits, doubles or gets a copy." QC every clip at 0.5 s steps; a duplicate near the end can be cut with CUTS instead of a remake.
 
 ## Production setup (unchanged)
 - nwgreen1024 /u/3: s1-s3, nwgreen1026 /u/4: s4-s6 (or 5 clips if asked). Remakes on hoohihi123123 /u/1.
