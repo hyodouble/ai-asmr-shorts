@@ -36,3 +36,5 @@ Pixabay tracks kept getting YouTube Content ID claims, so from 2026-10-09 every 
 | penguins-winter-blunder_flowmusic-ai.m4a | Tofu #25 | 2026-11-01 |
 | kitten-and-the-baby-owl-lullaby_flowmusic-ai.m4a | Mochi #31 | 2026-11-02 |
 | snowball-run_flowmusic-ai.m4a | Tofu #26 | 2026-11-02 |
+| the-great-cookie-heist_flowmusic-ai.m4a | Mochi #32 | 2026-11-03 |
+| snowman-pals_flowmusic-ai.m4a | Tofu #27 | 2026-11-03 |
