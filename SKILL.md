@@ -1571,3 +1571,10 @@ alimiter=limit=0.89:attack=5:release=60:level=disabled, afade in/out 0.04
 ### 2026-10-30 실행 기록 — Mochi #28·Tofu #23 제작
 - Mochi #28 거북 뒤집힘 (`templates/story-mochi-28.txt`): /u/0 s1-3, /u/2 s4-6, @Mochi, 6클립 첫 시도. BGM Flow Music "The Kitten and the Turtle"(071121d9). AF2·AF3 톤 노치. 52초, -20.0 LUFS, `~/Desktop/mochi_28.mp4`(6.4 MB). 미업로드
 - Tofu #23 물범 빨간 공 (`templates/story-tofu-23.txt`): Tofu Flow 프로젝트 삭제 후 첫 회차. 새 프로젝트 nwgreen1024 /u/3 bd7aa60c, nwgreen1026 /u/4 a1916773. "round snowdrift"는 눈사람으로 그려지고 "눈더미 뒤로 사라짐"은 안 그려짐 → "single giant snowball-shaped mound of piled snow, not a snowman" + 공은 화면 오른쪽 밖으로 굴러 나가게. s1·s2는 hoohihi123123 /u/1 b9144382(직접 생성, x2로 두 테이크)에서 재생성(`templates/story-tofu-23-remakes.txt`). CUTS로 s2·s4·s6 앞부분 잘라냄. BGM "Snowy Park Adventure"(8d80f237). 45초, -17.3 LUFS, `~/Desktop/tofu_23.mp4`(9.1 MB). 미업로드
+
+### 2026-11-05 실행 기록 — Mochi #34 s4·s6 재제작
+- Mochi #34 곰 꿀단지 (`templates/story-mochi-34.txt`): 사용자가 s4·s6 반려. s4는 모찌가 공중제비 중 몸이 거꾸로 뒤틀리고 곰 오른쪽으로 넘어가 끝났다(s5는 모찌가 왼쪽에서 시작). s6은 뚜껑에 발바닥 그림이 생기고 뚜껑이 카운터에 닿았다.
+- hoohihi123123 /u/1 e7e93a48에서 @Mochi로 두 클립 x2 생성(`templates/story-mochi-34-s4s6-remake.txt`). 추가 문장: "Mochi always stays on the left side ... the bear cub always stays on the right side; they never pass each other or swap sides", "The yellow lid is plain smooth yellow on both sides, with no picture, print, paw mark or pattern", s4는 공중제비 대신 "plops backward to the left ... onto its back ... never upside down on its head". s6 카메라는 얼굴 클로즈업 대신 "medium close shot of Mochi and the lid on its paw".
+- 채택: s4 4d4de143(주방 배치가 s5와 맞음), s6 742f8db0(39bd6384는 시작에 뚜껑이 카운터에 놓여 탈락). 옛 클립은 작업 폴더 `takes/s4_orig.mp4`, `takes/s6_r1.mp4`.
+- **규칙: 두 캐릭터가 넘어지거나 구르는 클립은 좌우 위치를 고정 문장으로 적는다. 소품 뚜껑·접시 등은 "무늬·그림 없음"을 적는다(캐릭터 발이 닿으면 발바닥 무늬가 찍혀 나온다).**
+- 재빌드 `SPEED=1.2 MAXGAIN=18 BGMLUFS=-26 ENDHOLD=2`, 52.2초, -17.2 LUFS, `~/Desktop/mochi_34.mp4`(CRF 27, 7.2 MB). s6 후반 곰 웃음 화음 확인 필요. 미업로드
