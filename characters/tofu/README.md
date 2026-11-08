@@ -45,6 +45,7 @@ Full working example: `templates/story-tofu-22.txt`.
 - "disappears behind X" is not drawn; send a prop out of the frame edge instead (#23).
 - Never write bell/chime. Props never span a container wall.
 - Slopes: "a slope toward the right edge" is drawn as ground rising, so objects roll uphill (#26). Write "flat hilltop; the ground falls away downhill toward the bottom-right corner, clearly lower than the hilltop" and "Gravity is real: anything that rolls or slides only ever moves downhill, getting lower in the frame; nothing ever rolls, slides or floats uphill."
+- Stuck-on-back gags: "tries to get up but cannot" lets Flow sit him up or stand him mid-clip (#31 s6). Write "stays lying flat on his round back for the entire clip: he never sits up, never rolls over and never stands up" and generate x2 to pick a take.
 - Duplicates: a second penguin can appear mid-clip (#26 s2 at ~7 s). Add "There is only one penguin, Tofu; he never splits, doubles or gets a copy." QC every clip at 0.5 s steps; a duplicate near the end can be cut with CUTS instead of a remake.
 
 ## Production setup (unchanged)
