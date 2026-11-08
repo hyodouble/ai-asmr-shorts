@@ -42,3 +42,5 @@ Pixabay tracks kept getting YouTube Content ID claims, so from 2026-10-09 every 
 | ice-slide-waltz_flowmusic-ai.m4a | Tofu #29 | 2026-11-05 |
 | kitten-duckling-toaster_flowmusic-ai.m4a | Mochi #35 | 2026-11-07 |
 | snowflake-catchers_flowmusic-ai.m4a | Tofu #30 | 2026-11-07 |
+| trick-candle-piglet_flowmusic-ai.m4a | Mochi #36 | 2026-11-08 |
+| snow-angel-lessons_flowmusic-ai.m4a | Tofu #31 | 2026-11-08 |
