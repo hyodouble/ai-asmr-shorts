@@ -35,6 +35,7 @@ Absolutely no music of any kind: no background music, no score, no soundtrack, n
 Full working example: `templates/story-tofu-22.txt`.
 
 ## Rules learned (#1-#22)
+- "clear snow angel" is drawn as a see-through glass/ice statue (#31 s3). Never write "clear" for snow shapes; write "a shallow dent pressed into the ground snow, made of the same plain white matte snow". A static high-angle camera looking down is what finally drew flat snow-angel imprints.
 - Side animal = "a natural wild animal with bare soft fluffy <color> fur". Never write clothing words, even negated (hat/scarf makes them wear one).
 - Tofu is in the first frame of every clip. A lone baby fawn in frame 1 was blocked ("서드 파티 콘텐츠 제공업체의 이견").
 - A hole/den/box prop: say it is empty, nobody inside, or Flow puts a copy of the character there.
