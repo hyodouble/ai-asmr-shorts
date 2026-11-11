@@ -48,3 +48,5 @@ Pixabay tracks kept getting YouTube Content ID claims, so from 2026-10-09 every 
 | moonlit-howling-lesson_flowmusic-ai.m4a | Tofu #32 | 2026-11-09 |
 | first-snow-at-the-kitchen-window_flowmusic-ai.m4a | Mochi #38 | 2026-11-10 |
 | the-great-sled-push_flowmusic-ai.m4a | Tofu #33 | 2026-11-10 |
+| banana-peel-blues_flowmusic-ai.m4a | Mochi #39 | 2026-11-11 |
+| little-steps-on-the-snow-hill_flowmusic-ai.m4a | Tofu #34 | 2026-11-11 |

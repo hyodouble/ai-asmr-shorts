@@ -42,6 +42,7 @@ Full working example: `templates/story-tofu-22.txt`.
 - Food that gets eaten starts already in the eater's mouth/beak.
 - Flow can't draw "sunk up to her chest in snow"; write "lies on her tummy with legs tucked under her and buried".
 - "no antlers" grows antlers; describe the head instead.
+- A big snow mound to climb (#34): even "single giant snowball, not a snowman: no head, no face, no second ball" drew a two-ball snowman 2 of 4 times. "one single low, wide dome of piled snow, like one giant snowball half-buried in the ground, wider than it is tall ... never two balls stacked, never a snowman" fixed it.
 - "round snowdrift" is drawn as a snowman; write "one big round mound of piled snow shaped like a single giant snowball, not a snowman: no head, no face, no second ball" (#23).
 - "disappears behind X" is not drawn; send a prop out of the frame edge instead (#23).
 - Never write bell/chime. Props never span a container wall.
