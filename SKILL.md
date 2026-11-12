@@ -669,6 +669,8 @@ Best with headphones.
 | 2026-10-14 | Tofu #6 "Her Sled Broke... So Tofu Became Her Sled 🛷💛 #6" (https://youtube.com/shorts/GN2ThLYjfgI, 인스타 whatttsts, 틱톡 Tiny Cozy Stories) | 캐릭터 스토리(아기 여우 썰매, 1.2배속 50초, 장면별 자막 6개, Flow Music BGM "Sledding Friends") |
 | 2026-11-11 | Mochi #38 "Mochi Lifted Her to See the First Snow 🦊❄️ | Cozy AI Story #38" (https://youtube.com/shorts/GVcyIT7UPTQ, 인스타 aistorycozy, 틱톡 @aistorycozy) | 캐릭터 스토리(아기 여우 + 높은 창문, v2 재제작 6클립 hoohihi, 1.2배속 52초, BGM "First Snow at the Kitchen Window") |
 | 2026-11-11 | Tofu #33 "Her Sled Was Stuck... So Tofu Pushed 🐆🛷 #33" (https://youtube.com/shorts/KSRuqwn0Ink, 인스타 whatttsts, 틱톡 Tiny Cozy Stories) | 캐릭터 스토리(아기 눈표범 썰매, 1.2배속 50초, BGM "The Great Sled Push") |
+| 2026-11-12 | Mochi #39 "Mochi Showed Her the Banana Trick 🐒🍌 | Cozy AI Story #39" (https://youtube.com/shorts/7mbQKR4hrxM, 인스타 aistorycozy) | 캐릭터 스토리(아기 원숭이 바나나, 1.2배속 52초, BGM "Banana Peel Blues") |
+| 2026-11-12 | Tofu #34 "She Couldn't Climb the Snow Hill... So Tofu Made Her Steps 🐐❄️ #34" (https://youtube.com/shorts/gs71SCyb0Kc, 인스타 whatttsts, 틱톡 Tiny Cozy Stories) | 캐릭터 스토리(아기 산양 눈계단, 5클립, 1.2배속 44초, BGM "Little Steps on the Snow Hill") |
 
 글래스 커팅 다음 후보(단면 페이오프 순): 무화과 · 스타프루트 · 패션프루트 · 오렌지 · 수박.
 이 후보 목록은 **트렌드 조사에서 글래스 커팅이 계속 1등일 때만** 쓴다. 1등 포맷이 바뀌면 그쪽 소재로 새로 판다.
