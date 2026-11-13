@@ -671,6 +671,8 @@ Best with headphones.
 | 2026-11-11 | Tofu #33 "Her Sled Was Stuck... So Tofu Pushed 🐆🛷 #33" (https://youtube.com/shorts/KSRuqwn0Ink, 인스타 whatttsts, 틱톡 Tiny Cozy Stories) | 캐릭터 스토리(아기 눈표범 썰매, 1.2배속 50초, BGM "The Great Sled Push") |
 | 2026-11-12 | Mochi #39 "Mochi Showed Her the Banana Trick 🐒🍌 | Cozy AI Story #39" (https://youtube.com/shorts/7mbQKR4hrxM, 인스타 aistorycozy) | 캐릭터 스토리(아기 원숭이 바나나, 1.2배속 52초, BGM "Banana Peel Blues") |
 | 2026-11-12 | Tofu #34 "She Couldn't Climb the Snow Hill... So Tofu Made Her Steps 🐐❄️ #34" (https://youtube.com/shorts/gs71SCyb0Kc, 인스타 whatttsts, 틱톡 Tiny Cozy Stories) | 캐릭터 스토리(아기 산양 눈계단, 5클립, 1.2배속 44초, BGM "Little Steps on the Snow Hill") |
+| 2026-11-13 | Mochi #40 "Mochi Taught Her to Just Eat the Sugar 🦝🍬 | Cozy AI Story #40" (https://youtube.com/shorts/WuJHBN9YQuo, 인스타 aistorycozy) | 캐릭터 스토리(아기 너구리 각설탕, 1.2배속 52초, BGM "Sugar Cube Dilemma") |
+| 2026-11-13 | Tofu #35 "She Was Freezing in the Wind... So Tofu Built Her a Wall 🐦❄️ #35" (https://youtube.com/shorts/5UlRHEY3vto, 인스타 whatttsts, 틱톡 Tiny Cozy Stories) | 캐릭터 스토리(참새 바람막이 눈벽, 1.2배속 52초, BGM "Penguin & The Sparrows", 업로드본 CRF 31 8.8 MB) |
 
 글래스 커팅 다음 후보(단면 페이오프 순): 무화과 · 스타프루트 · 패션프루트 · 오렌지 · 수박.
 이 후보 목록은 **트렌드 조사에서 글래스 커팅이 계속 1등일 때만** 쓴다. 1등 포맷이 바뀌면 그쪽 소재로 새로 판다.
