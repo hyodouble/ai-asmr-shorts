@@ -50,3 +50,5 @@ Pixabay tracks kept getting YouTube Content ID claims, so from 2026-10-09 every 
 | the-great-sled-push_flowmusic-ai.m4a | Tofu #33 | 2026-11-10 |
 | banana-peel-blues_flowmusic-ai.m4a | Mochi #39 | 2026-11-11 |
 | little-steps-on-the-snow-hill_flowmusic-ai.m4a | Tofu #34 | 2026-11-11 |
+| breakfast-bounce_flowmusic-ai.m4a | Mochi #44 | 2026-11-16 |
+| the-frozen-dish_flowmusic-ai.m4a | Tofu #39 | 2026-11-16 |
