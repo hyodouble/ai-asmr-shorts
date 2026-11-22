@@ -10,7 +10,9 @@ description: 상품/쿠팡 없이 AI로 ASMR 영상을 만든다. 수면용 1시
 
 - **Tofu 첫 자막은 곤경을 말하는 완전한 문장이다.** `She was so cold...`, `Her dam broke...`, `She couldn't cross the stream...` 처럼 "She/He/Her/His ..." 로 시작한다. `Oops!`, `Poof!`, `Whoa!`, `Too high!` 같은 감탄사로 시작하지 않는다. #20 까지 19편 중 13편이 1,000회를 넘었고, 감탄사로 바뀐 #21 부터는 13편 중 2편뿐이다.
 - **곤경이 첫 화면(0.3초)에 보여야 한다.** 손님 동물이 이미 끼어 있거나, 뒤집혀 있거나, 물건보다 눈에 띄게 작다. Mochi 는 손님이 앞에서 곤경에 빠져 있고 Mochi 가 뒤에 있는 구도로 연다. `Hic!`, `Wide awake!`, `Achoo!` 처럼 상태만 보여주는 첫 장면은 쓰지 않는다.
-- **유튜브에는 Mochi·Tofu 스토리를 올리지 않는다.** 60편 넘게 올려 편당 3~5회였다. Mochi = 인스타, Tofu = 인스타 + 틱톡. SliceverseAI 의 주 1회 공예 ASMR 은 이 규칙과 무관하다.
+- (2026-11-19 재개) 유튜브 업로드는 다시 한다: Mochi = 인스타 + 유튜브, Tofu = 인스타 + 틱톡 + 유튜브. 유튜브는 전부 아동용으로 올린다(2026-11-22 사용자 재확인).
+- **제목·캡션·해시태그에 "AI" 를 쓰지 않는다 (2026-11-22 사용자 확정).** 검색·추천 관심 신호를 깎는다. `#aistory` 는 `#cozystory` 로 바꾼다. 유튜브 제목 끝은 채널명 없이 ` #N` 만 붙인다(Tofu 와 같은 형식). 예: `He Couldn't Reach the Orange... So Mochi Rolled It Over 🍊🛁 #47`. 플랫폼의 AI 라벨 스위치는 그대로 켠다(정책 의무).
+- 채널 표시 이름 (2026-11-22 변경): Mochi 유튜브·인스타 = **Cozy Mochi Story** (예전 Cozy AI Story, 핸들 @aistorycozy 는 그대로), Tofu 유튜브 = **Tiny Tofu Story** (예전 SliceverseAI, 채널 ID UCPIWmAeY05bOdFAa8OXyQfg 그대로).
 
 ## 2026-10-25 팔로우 유도 — Mochi·Tofu 스토리 전부 (제작·업로드 때 꼭 넣는다)
 
@@ -18,7 +20,7 @@ description: 상품/쿠팡 없이 AI로 ASMR 영상을 만든다. 수면용 1시
 
 - **영상 끝 (2026-10-26 변경)**: 글자 팔로우 카드(`make_endcard.py`)는 쓰지 않는다. 사용자가 "너무 조잡해 보인다"고 했고, 이번 달 조회수 상위 동물 쇼츠 10편(최대 670만 회)을 확인했더니 글자 카드는 하나도 없었다. 전부 포옹·미소 같은 따뜻한 마지막 장면을 1~3초 멈춰 두고 끝낸다. 그래서 `ENDHOLD=2 bash scripts/build-story.sh <폴더>` 로 마지막 프레임을 2초 정지하고, BGM은 그 위로 페이드아웃한다. 연재 안내는 캡션의 `· #N+1 next` 와 첫 댓글에만 둔다.
 - (폐기) 영상 끝 카드: `python3 scripts/make_endcard.py <작업폴더> <다음 회차 번호>` 로 `out/endcard.png` 를 만들면 `build-story.sh` 가 마지막 2.5초(`ENDSEC`)에 "To be continued in #N+1 / Follow so you don't miss it" 를 얹는다. 장면 자막과 겹치지 않게 아래쪽에 있다. 빌드 후 마지막 프레임을 눈으로 확인한다.
-- **캡션(인스타·틱톡·유튜브 설명)**: 지금처럼 한 줄 + 해시태그. 그 한 줄 끝에 `· #N+1 next` 를 붙인다. 예: `Mochi vs the egg 🥚 Don't roll away! · #14 next #cat #kitten #aistory #cuteanimals`. 다른 문장은 늘리지 않는다.
+- **캡션(인스타·틱톡·유튜브 설명)**: 지금처럼 한 줄 + 해시태그. 그 한 줄 끝에 `· #N+1 next` 를 붙인다. 예: `Mochi vs the egg 🥚 Don't roll away! · #14 next #cat #kitten #cozystory #cuteanimals`. 다른 문장은 늘리지 않는다.
 - **첫 댓글**: 지금 하는 질문 댓글에 다음 회차 예고를 한 마디 붙인다. 예: `What should Mochi try next? 🐾 #14 is coming`.
 - 프로필 소개글 변경, 인기 회차 상단 고정은 계정 설정이라 사용자에게 먼저 묻는다.
 
