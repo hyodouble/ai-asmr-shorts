@@ -54,3 +54,5 @@ Pixabay tracks kept getting YouTube Content ID claims, so from 2026-10-09 every 
 | the-frozen-dish_flowmusic-ai.m4a | Tofu #39 | 2026-11-16 |
 | kitchen-rescue_flowmusic-ai.m4a | Mochi #50 | 2026-11-22 |
 | tiny-wings-tall-berries_flowmusic-ai.m4a | Tofu #45 | 2026-11-22 |
+| pie-and-paws_flowmusic-ai.m4a | Mochi #52 | 2026-11-24 |
+| snowday-hide-and-seek_flowmusic-ai.m4a | Tofu #47 | 2026-11-24 |
