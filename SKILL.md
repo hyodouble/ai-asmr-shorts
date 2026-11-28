@@ -514,6 +514,7 @@ Best with headphones.
 
 ### Flow 에이전트 함정 (2026-09-15 확인)
 
+- (2026-11-28) Flow 에이전트는 프롬프트에 길이가 없으면 4·6·8초로 만든다. 프롬프트 앞에 `Generate exactly one video, 10 seconds long (duration: 10 seconds, not 4, not 6, not 8), using this prompt verbatim:` 를 붙인다(@Mochi 칩 뒤). 4초도 크레딧이 들어 계정당 10초 2개가 안 남을 수 있다.
 - **에이전트가 생성 중일 때 친 프롬프트는 통째로 씹힌다.** 전송 버튼이 정지(■)면 기다렸다가 친다. 친 뒤 스크린샷으로 확인할 것
 - 프롬프트를 보냈는데 승인 카드도 응답도 안 뜨면 `Go ahead and generate that video now.` 한 줄을 더 보낸다(3클립 중 1클립 꼴로 발생)
 - 다운로드 버튼은 zip으로 받아진다(`다운로드.zip`). 압축 안에 mp4 하나. 연속으로 누르면 `다운로드 (1).zip`, `(2).zip`로 쌓이니 순서를 기록해 둘 것
